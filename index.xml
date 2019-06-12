@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>杰哥的博客</title>
+    <title>张杰的博客</title>
     <link>https://zhangjie174.github.io/</link>
-    <description>Recent content on 杰哥的博客</description>
+    <description>Recent content on 张杰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 01:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://zhangjie174.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>牛逼的人总会牛逼起来的</title>
-      <link>https://zhangjie174.github.io/posts/niubi-deren-zonghui-niubi-qilai-de/</link>
-      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      <title>CocosCreator Layout即时更新布局</title>
+      <link>https://zhangjie174.github.io/posts/laouut-update/</link>
+      <pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
       
-      <guid>https://zhangjie174.github.io/posts/niubi-deren-zonghui-niubi-qilai-de/</guid>
-      <description>写在前面 为什么说牛逼的人肯定会牛逼起来呢？因为金子总是会发光的。
-使用人群 每个人都可以看
-blabl 巴啦啦1 加加加</description>
+      <guid>https://zhangjie174.github.io/posts/laouut-update/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>win10 安装Scoop、Hugo、Go等环境</title>
+      <link>https://zhangjie174.github.io/posts/install-hugo-go/</link>
+      <pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
+      
+      <guid>https://zhangjie174.github.io/posts/install-hugo-go/</guid>
+      <description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
     </item>
     
     <item>

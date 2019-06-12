@@ -3,20 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhangjie174.github.io/posts/laouut-update/</loc>
+    <lastmod>2019-06-13T01:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhangjie174.github.io/posts/</loc>
-    <lastmod>2019-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-13T01:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zhangjie174.github.io/</loc>
-    <lastmod>2019-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-13T01:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zhangjie174.github.io/posts/niubi-deren-zonghui-niubi-qilai-de/</loc>
-    <lastmod>2019-06-11T00:00:00+00:00</lastmod>
+    <loc>https://zhangjie174.github.io/posts/install-hugo-go/</loc>
+    <lastmod>2019-06-12T13:22:33+08:00</lastmod>
   </url>
   
   <url>
