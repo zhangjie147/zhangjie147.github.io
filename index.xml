@@ -2,40 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>张杰的博客</title>
-    <link>https://zhangjie174.github.io/</link>
+    <link>https://zhangjie174.com/</link>
     <description>Recent content on 张杰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 13 Jun 2019 01:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://zhangjie174.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhangjie174.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CocosCreator Layout即时更新布局</title>
-      <link>https://zhangjie174.github.io/posts/laouut-update/</link>
+      <link>https://zhangjie174.com/posts/laouut-update/</link>
       <pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
       
-      <guid>https://zhangjie174.github.io/posts/laouut-update/</guid>
-      <description></description>
+      <guid>https://zhangjie174.com/posts/laouut-update/</guid>
+      <description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
     </item>
     
     <item>
       <title>win10 安装Scoop、Hugo、Go等环境</title>
-      <link>https://zhangjie174.github.io/posts/install-hugo-go/</link>
+      <link>https://zhangjie174.com/posts/install-hugo-go/</link>
       <pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
       
-      <guid>https://zhangjie174.github.io/posts/install-hugo-go/</guid>
+      <guid>https://zhangjie174.com/posts/install-hugo-go/</guid>
       <description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
     </item>
     
     <item>
+      <title>Email</title>
+      <link>https://zhangjie174.com/email-uri/</link>
+      <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangjie174.com/email-uri/</guid>
+      <description> Email: 530784359@qq.com  </description>
+    </item>
+    
+    <item>
       <title>About Hugo</title>
-      <link>https://zhangjie174.github.io/about-hugo/</link>
+      <link>https://zhangjie174.com/about-hugo/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://zhangjie174.github.io/about-hugo/</guid>
+      <guid>https://zhangjie174.com/about-hugo/</guid>
       <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
 It makes use of a variety of open source projects including:
  https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>

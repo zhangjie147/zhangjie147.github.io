@@ -1,30 +1,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on 张杰的博客</title>
-		<link>https://zhangjie174.github.io/posts/</link>
+		<link>https://zhangjie174.com/posts/</link>
 		<description>Recent content in Posts on 张杰的博客</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>cn-zh</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Thu, 13 Jun 2019 01:00:00 +0800</lastBuildDate>
-		<atom:link href="https://zhangjie174.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://zhangjie174.com/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>CocosCreator Layout即时更新布局</title>
-			<link>https://zhangjie174.github.io/posts/laouut-update/</link>
+			<link>https://zhangjie174.com/posts/laouut-update/</link>
 			<pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
 			
-			<guid>https://zhangjie174.github.io/posts/laouut-update/</guid>
-			<description></description>
-			<content type="html"><![CDATA[]]></content>
+			<guid>https://zhangjie174.com/posts/laouut-update/</guid>
+			<description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
+			<content type="html"><![CDATA[
+
+<h1 id="layout-即时更新布局">Layout 即时更新布局</h1>
+
+<ul>
+<li>updateLayout() 立即执行更新布局 的方法</li>
+
+<li><p>如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout()
+&gt;&hellip;(Layout)
+&gt;&gt;A(Layout)
+&gt;&gt;&gt;B(Layout)</p>
+
+<pre><code>B.updateLayout()
+A.updateLayout()
+....updateLayout()
+</code></pre></li>
+
+<li><p>当在使用节点的 zIndex 属性给 Layout 的子节点排序时。
+在新加入一个子节点马上调用 updateLayout() ，会发现并没有达到效果。
+这时我们需要先调用Node.sortAllChildren() (根据子节点的 zIndex 和 arrivalOrder 进行排序，正常情况下开发者不需要手动调用这个函数)
+&gt;A(Layout)
+&gt;&gt;B(Node)</p>
+
+<pre><code># C.parent = A.node
+A.node.sortAllChildren()
+A.updateLayout()
+</code></pre></li>
+</ul>
+]]></content>
 		</item>
 		
 		<item>
 			<title>win10 安装Scoop、Hugo、Go等环境</title>
-			<link>https://zhangjie174.github.io/posts/install-hugo-go/</link>
+			<link>https://zhangjie174.com/posts/install-hugo-go/</link>
 			<pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
 			
-			<guid>https://zhangjie174.github.io/posts/install-hugo-go/</guid>
+			<guid>https://zhangjie174.com/posts/install-hugo-go/</guid>
 			<description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
 			<content type="html"><![CDATA[
 

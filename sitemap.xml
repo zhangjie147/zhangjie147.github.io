@@ -3,34 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zhangjie174.github.io/posts/laouut-update/</loc>
+    <loc>https://zhangjie174.com/posts/laouut-update/</loc>
     <lastmod>2019-06-13T01:00:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zhangjie174.github.io/posts/</loc>
-    <lastmod>2019-06-13T01:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhangjie174.github.io/</loc>
+    <loc>https://zhangjie174.com/posts/</loc>
     <lastmod>2019-06-13T01:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://zhangjie174.github.io/posts/install-hugo-go/</loc>
+    <loc>https://zhangjie174.com/</loc>
+    <lastmod>2019-06-13T01:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhangjie174.com/posts/install-hugo-go/</loc>
     <lastmod>2019-06-12T13:22:33+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zhangjie174.github.io/about-hugo/</loc>
+    <loc>https://zhangjie174.com/email-uri/</loc>
+    <lastmod>2019-06-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangjie174.com/about-hugo/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zhangjie174.github.io/tags/</loc>
+    <loc>https://zhangjie174.com/tags/</loc>
     <priority>0</priority>
   </url>
   
