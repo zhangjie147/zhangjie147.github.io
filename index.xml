@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 01:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Jun 2019 22:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://zhangjie174.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
+      <link>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</link>
+      <pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
+      
+      <guid>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</guid>
+      <description>移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {</description>
+    </item>
     
     <item>
       <title>CocosCreator Layout即时更新布局</title>

@@ -1,26 +1,83 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Posts on 张杰的博客</title>
-		<link>https://zhangjie174.com/posts/</link>
-		<description>Recent content in Posts on 张杰的博客</description>
-		<generator>Hugo -- gohugo.io</generator>
-		<language>cn-zh</language>
-		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 20 Jun 2019 22:00:00 +0800</lastBuildDate>
-		<atom:link href="https://zhangjie174.com/posts/index.xml" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
-			<link>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</link>
-			<pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
-			
-			<guid>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</guid>
-			<description>移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {</description>
-			<content type="html"><![CDATA[
+<!DOCTYPE html>
+<html lang="cn-zh" style="background:#2E2121">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#2E2121">
+	<meta name="msapplication-TileColor" content="#2E2121">
 
-<h1 id="移动和缩放目标层">移动和缩放目标层</h1>
+<meta itemprop="name" content="CocosCreator 一个通过触摸移动和缩放目标层的组件">
+<meta itemprop="description" content="移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {">
 
-<h2 id="使用注意">使用注意</h2>
+
+<meta itemprop="datePublished" content="2019-06-20T22:00:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-20T22:00:00&#43;08:00" />
+<meta itemprop="wordCount" content="489">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta property="og:title" content="CocosCreator 一个通过触摸移动和缩放目标层的组件" />
+<meta property="og:description" content="移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhangjie174.com/posts/cocoscreator_scaleandslide/" />
+<meta property="article:published_time" content="2019-06-20T22:00:00&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-20T22:00:00&#43;08:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CocosCreator 一个通过触摸移动和缩放目标层的组件"/>
+<meta name="twitter:description" content="移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
+	<link rel="stylesheet" href="https://zhangjie174.com/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://zhangjie174.com">张杰的博客</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://zhangjie174.com/posts/">Posts</a>
+					<a href="https://zhangjie174.com/about-hugo/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="email-uri/" target="_blank" rel="noopener me" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a><a href="https://github.com/zhangjie174/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://zhangjie174.com/posts/">Posts</a></li>
+			<li><a href="https://zhangjie174.com/about-hugo/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>6月20日, 2019</span></div>
+				<h1>CocosCreator 一个通过触摸移动和缩放目标层的组件</h1>
+			</header>
+			<div class="content">
+				
+
+<h1 id="移动和缩放目标层">移动和缩放目标层<a href="#移动和缩放目标层" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<h2 id="使用注意">使用注意<a href="#使用注意" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 
 <ul>
 <li>需要新建一个相机来专门拍摄目标节点</li>
@@ -116,92 +173,33 @@
         <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div>]]></content>
-		</item>
-		
-		<item>
-			<title>CocosCreator Layout即时更新布局</title>
-			<link>https://zhangjie174.com/posts/laouut-update/</link>
-			<pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
-			
-			<guid>https://zhangjie174.com/posts/laouut-update/</guid>
-			<description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
-			<content type="html"><![CDATA[
+</code></pre></div>
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>489 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-06-20 22:00 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://zhangjie174.com/posts/laouut-update/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>CocosCreator Layout即时更新布局</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
 
-<h1 id="layout-即时更新布局">Layout 即时更新布局</h1>
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://zhangjie174.com">Jie Zhang</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://zhangjie174.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
-<ul>
-<li>updateLayout() 立即执行更新布局 的方法</li>
 
-<li><p>如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout()
-&gt;&hellip;(Layout)
-&gt;&gt;A(Layout)
-&gt;&gt;&gt;B(Layout)</p>
+	<script src="https://zhangjie174.com/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
 
-<pre><code>B.updateLayout()
-A.updateLayout()
-....updateLayout()
-</code></pre></li>
+</body>
 
-<li><p>当在使用节点的 zIndex 属性给 Layout 的子节点排序时。
-在新加入一个子节点马上调用 updateLayout() ，会发现并没有达到效果。
-这时我们需要先调用Node.sortAllChildren() (根据子节点的 zIndex 和 arrivalOrder 进行排序，正常情况下开发者不需要手动调用这个函数)
-&gt;A(Layout)
-&gt;&gt;B(Node)</p>
-
-<pre><code># C.parent = A.node
-A.node.sortAllChildren()
-A.updateLayout()
-</code></pre></li>
-</ul>
-]]></content>
-		</item>
-		
-		<item>
-			<title>win10 安装Scoop、Hugo、Go等环境</title>
-			<link>https://zhangjie174.com/posts/install-hugo-go/</link>
-			<pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
-			
-			<guid>https://zhangjie174.com/posts/install-hugo-go/</guid>
-			<description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
-			<content type="html"><![CDATA[
-
-<h1 id="安装scoop-scoop-windows-的命令行安装程序管理工具">安装Scoop(Scoop Windows 的命令行安装程序管理工具)</h1>
-
-<p><a href="https://www.cnblogs.com/CyLee/p/7197551.html">scoop安装教程</a></p>
-
-<pre><code>     # 查看powershell版本 必须使用powershell3.0以上
-     # 如果是3.0以下，需要升级才可以使用，如何升级？先安装好Microsoft .NET Framework 4.5，再安装Windows Management Framework 4.0 然后重启即可 
-     $PSVersionTable.PSVersion
-     
-     # 第一步，打开powershell3.0+，输入以下代码，选择A【全是】
-     set-executionpolicy remotesigned -s cu
-     
-     # 上面成功之后，进入第二步
-     iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-     
-     # 重启powerShell
-</code></pre>
-
-<h1 id="安装go">安装Go</h1>
-
-<ul>
-<li><a href="https://golang.google.cn/dl/">Go下载地址</a></li>
-</ul>
-
-<h1 id="安装hugo">安装Hugo</h1>
-
-<pre><code>    scoop install hugo
-</code></pre>
-
-<pre><code>    mkdir $HOME/src
-    cd $HOME/src
-    git clone https://github.com/gohugoio/hugo.git
-    cd hugo
-    go install --tags extended
-</code></pre>
-]]></content>
-		</item>
-		
-	</channel>
-</rss>
+</html>
