@@ -6,8 +6,106 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>cn-zh</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Thu, 20 Jun 2019 22:00:00 +0800</lastBuildDate>
+		<lastBuildDate>Mon, 04 Nov 2019 17:25:12 +0800</lastBuildDate>
 		<atom:link href="https://zhangjie174.com/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>UE4-多人联机-Replicate</title>
+			<link>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
+			<pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
+			
+			<guid>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
+			<description>UE4 C++ Replicate 方法 Replicate 变量 在.h内 将变量声明 Replicated UPROPERTY(Replicated) 类名* 变量; 在.cpp内 加入方法GetLifetimeReplicatedProps #include &amp;lt;Net/UnrealNetwork.h&amp;gt; void 类名::Ge</description>
+			<content type="html"><![CDATA[
+
+<h2 id="ue4-c-replicate-方法">UE4 C++ Replicate 方法</h2>
+
+<h3 id="replicate-变量">Replicate 变量</h3>
+
+<ul>
+<li>在.h内
+
+<ul>
+<li>将变量声明 Replicated</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">UPROPERTY</span><span class="p">(</span><span class="n">Replicated</span><span class="p">)</span>
+<span class="err">类名</span><span class="o">*</span> <span class="err">变量</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>在.cpp内
+
+<ul>
+<li>加入方法GetLifetimeReplicatedProps</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;Net/UnrealNetwork.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="err">类名</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">TArray</span><span class="o">&lt;</span> <span class="n">FLifetimeProperty</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">OutLifetimeProps</span><span class="p">)</span> <span class="k">const</span>
+<span class="p">{</span>
+	<span class="n">Super</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">OutLifetimeProps</span><span class="p">);</span>
+
+	<span class="n">DOREPLIFETIME</span><span class="p">(</span><span class="err">类名</span><span class="p">,</span> <span class="err">变量</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+
+<h3 id="replicate-函数">Replicate 函数</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">A</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="p">.</span>
+	<span class="p">..</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>在.h内
+
+<ul>
+<li>新建函数ServeerA()</li>
+<li>声明 Server</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">UFUNCTION</span><span class="p">(</span><span class="n">Server</span><span class="p">,</span> <span class="n">Reliable</span><span class="p">,</span> <span class="n">WithValidation</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">ServerA</span><span class="p">();</span>
+</code></pre></div>
+<ul>
+<li>在.cpp内
+
+<ul>
+<li>加入方法ServerA_Implementation()</li>
+<li>因 WithValidation 加入方法ServerA_Validate() 验证</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span> <span class="err">类名</span><span class="o">::</span><span class="n">ServerA_Implementation</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">A</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="err">类名</span><span class="o">::</span><span class="n">ServerA_Validate</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>在 A() 内加入</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">A</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">Role</span> <span class="o">&lt;</span> <span class="n">ROLE_Authority</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">ServerA</span><span class="p">();</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="p">.</span>
+	<span class="p">..</span>
+	<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+]]></content>
+		</item>
 		
 		<item>
 			<title>CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
@@ -27,7 +125,7 @@
 </ul>
 
 <p>ScaleAndSlide.js</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">cc</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
+<div class="highlight"><pre class="chroma"><code class="language-Js" data-lang="Js"><span class="nx">cc</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
     <span class="k">extends</span><span class="o">:</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Component</span><span class="p">,</span>
     <span class="nx">properties</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">touchLayer</span><span class="o">:</span> <span class="nx">cc</span><span class="p">.</span><span class="nx">Node</span><span class="p">,</span> <span class="c1">//触摸层
