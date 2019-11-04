@@ -15,95 +15,133 @@
 			<pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
 			
 			<guid>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
-			<description>UE4 C++ Replicate 方法 Replicate 变量 在.h内 将变量声明 Replicated UPROPERTY(Replicated) 类名* 变量; 在.cpp内 加入方法GetLifetimeReplicatedProps #include &amp;lt;Net/UnrealNetwork.h&amp;gt; void 类名::Ge</description>
+			<description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位 我们需要将Actor::bRep</description>
 			<content type="html"><![CDATA[
 
 <h2 id="ue4-c-replicate-方法">UE4 C++ Replicate 方法</h2>
 
-<h3 id="replicate-变量">Replicate 变量</h3>
+<h3 id="replicate-property">Replicate Property</h3>
+
+<p>在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位</p>
 
 <ul>
-<li>在.h内
-
-<ul>
-<li>将变量声明 Replicated</li>
-</ul></li>
+<li>我们需要将Actor::bReplicates变量设置为true。</li>
+<li>只想让Actor的所有者得到信息，我们可以设置Actor::bAlwaysRelevant变量为true。</li>
+<li>只想让距离Actor的一定范围的人得到同步，我们可以设置Actor::NetCullDistanceSquared。</li>
+<li>特定条件，我们可以Override在Actor::IsNetRelevantFor函数。</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">UPROPERTY</span><span class="p">(</span><span class="n">Replicated</span><span class="p">)</span>
-<span class="err">类名</span><span class="o">*</span> <span class="err">变量</span><span class="p">;</span>
-</code></pre></div>
-<ul>
-<li>在.cpp内
 
-<ul>
-<li>加入方法GetLifetimeReplicatedProps</li>
-</ul></li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;Net/UnrealNetwork.h&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">void</span> <span class="err">类名</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">TArray</span><span class="o">&lt;</span> <span class="n">FLifetimeProperty</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">OutLifetimeProps</span><span class="p">)</span> <span class="k">const</span>
-<span class="p">{</span>
-	<span class="n">Super</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">OutLifetimeProps</span><span class="p">);</span>
+<h4 id="方法一">方法一</h4>
 
-	<span class="n">DOREPLIFETIME</span><span class="p">(</span><span class="err">类名</span><span class="p">,</span> <span class="err">变量</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre><code>将变量声明 Replicated
+
+```C++
+    UPROPERTY(Replicated)
+    float a;
+```
+</code></pre>
+
+<h4 id="方法二">方法二</h4>
+
+<pre><code>将变量声明 Replicated
+
+```C++
+    UPROPERTY(ReplicatedUsing=OnRep_A)
+    float a;
+
+    UFUNCTION()
+    void OnRep_A(...);
+
+    void OnRep_A(...)
+    {
+        ...
+    }
+```
+
+C++声明此种同步属性，当属性在服务器发生变化时，对应的客户端自动调用OnRep函数，在服务器端，需要手动调用OnRep函数
+</code></pre>
+
+<h4 id="以上都需要加入方法getlifetimereplicatedprops">以上都需要加入方法GetLifetimeReplicatedProps</h4>
+
+<pre><code>```C++
+    #include &lt;Net/UnrealNetwork.h&gt;
+
+    void A::GetLifetimeReplicatedProps(TArray&lt; FLifetimeProperty &gt; &amp; OutLifetimeProps) const
+    {
+        Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+        DOREPLIFETIME(A, a);
+    }
+```
+
+可以用来使用条件复制（Conditional Replication）就可以实现属性只同步给部分客户端的功能
+</code></pre>
+
 <hr />
 
-<h3 id="replicate-函数">Replicate 函数</h3>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">A</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="p">.</span>
-	<span class="p">..</span>
-	<span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>在.h内
+<h3 id="function-call-replicate">Function Call Replicate</h3>
+
+<p>一共有三种RPCs，分别为Server函数，Client函数，Multicast函数</p>
 
 <ul>
-<li>新建函数ServeerA()</li>
-<li>声明 Server</li>
-</ul></li>
+<li>Client 服务器上调用、但需要在客户端上执行的 RPC</li>
+<li>Server 客户端上调用、但需要在服务器上执行的 RPC</li>
+<li>Multicast 多播 RPC 可以从服务器调用，然后在服务器和当前连接的所有客户端上执行</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">UFUNCTION</span><span class="p">(</span><span class="n">Server</span><span class="p">,</span> <span class="n">Reliable</span><span class="p">,</span> <span class="n">WithValidation</span><span class="p">)</span>
-<span class="kt">void</span> <span class="n">ServerA</span><span class="p">();</span>
-</code></pre></div>
-<ul>
-<li>在.cpp内
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">UFUNCTION</span><span class="p">(</span> <span class="n">Client</span> <span class="p">);</span>
+	<span class="n">Fa</span><span class="p">()</span>
 
-<ul>
-<li>加入方法ServerA_Implementation()</li>
-<li>因 WithValidation 加入方法ServerA_Validate() 验证</li>
-</ul></li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span> <span class="err">类名</span><span class="o">::</span><span class="n">ServerA_Implementation</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="n">A</span><span class="p">();</span>
-<span class="p">}</span>
+	<span class="n">UFUNCTION</span><span class="p">(</span> <span class="n">Serve</span> <span class="p">);</span>
+	<span class="n">Fb</span><span class="p">()</span>
 
-<span class="kt">bool</span> <span class="err">类名</span><span class="o">::</span><span class="n">ServerA_Validate</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
+	<span class="n">UFUNCTION</span><span class="p">(</span> <span class="n">Multicast</span> <span class="p">);</span>
+	<span class="n">Fc</span><span class="p">()</span>
 </code></pre></div>
-<ul>
-<li>在 A() 内加入</li>
-</ul>
-<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="n">A</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">Role</span> <span class="o">&lt;</span> <span class="n">ROLE_Authority</span><span class="p">)</span>
+<h4 id="定义我们的rpc函数-此时需要注意的是-rpc函数的定义需要在函数末尾添加-impementation">定义我们的RPC函数。此时需要注意的是，RPC函数的定义需要在函数末尾添加_Impementation</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">UFUNCTION</span><span class="p">(</span> <span class="n">Serve</span> <span class="p">);</span>
+	<span class="n">Fa</span><span class="p">()</span>
+
+	<span class="kt">void</span> <span class="n">A</span><span class="o">::</span><span class="n">Fa_Implementation</span><span class="p">()</span>
 	<span class="p">{</span>
-		<span class="n">ServerA</span><span class="p">();</span>
-		<span class="k">return</span><span class="p">;</span>
+	<span class="n">Fa</span><span class="p">();</span>
 	<span class="p">}</span>
 
-	<span class="p">.</span>
-	<span class="p">..</span>
-	<span class="p">...</span>
-<span class="p">}</span>
+	<span class="kt">void</span> <span class="n">A</span><span class="o">::</span><span class="n">Fa</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">Role</span> <span class="o">&lt;</span> <span class="n">ROLE_Authority</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">ServerFa</span><span class="p">();</span>
+		<span class="p">}</span>
+	<span class="p">}</span>  
 </code></pre></div>
-<hr />
+<h4 id="枚举类型">枚举类型</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">UENUM</span><span class="p">()</span>
+	<span class="k">enum</span> <span class="n">ENetRole</span>
+	<span class="p">{</span>
+		<span class="cm">/** No role at all. */</span>
+		<span class="n">ROLE_None</span><span class="p">,</span>
+		<span class="cm">/** Locally simulated proxy of this actor. */</span>
+		<span class="n">ROLE_SimulatedProxy</span><span class="p">,</span>
+		<span class="cm">/** Locally autonomous proxy of this actor. */</span>
+		<span class="n">ROLE_AutonomousProxy</span><span class="p">,</span>
+		<span class="cm">/** Authoritative control over the actor. */</span>
+		<span class="n">ROLE_Authority</span><span class="p">,</span>
+		<span class="n">ROLE_MAX</span><span class="p">,</span>
+	<span class="p">};</span>
+</code></pre></div>
+<h4 id="ufunction-加入-withvalidation-防止玩家作弊-添加的一个验证函数-我们可以自行编写验证条件">UFUNCTION() 加入 WithValidation 防止玩家作弊,添加的一个验证函数，我们可以自行编写验证条件.</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="kt">bool</span> <span class="n">A</span><span class="o">::</span><span class="n">Fa_Validate</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="p">}</span>	
+</code></pre></div>
+<h4 id="ufunction-加入-reliable或unreliable">UFUNCTION() 加入 reliable或unreliable</h4>
+
+<ul>
+<li>reliable相当于TCP传输，可靠，必达，顺序一定，但是速度慢。</li>
+<li>unreliable则相当于UDP，不可靠，网络不好时有可能出现不可达，但是好处就是速度快。
+&mdash;</li>
+</ul>
 ]]></content>
 		</item>
 		

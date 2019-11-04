@@ -18,7 +18,7 @@
       <pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
       
       <guid>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
-      <description>UE4 C++ Replicate 方法 Replicate 变量 在.h内 将变量声明 Replicated UPROPERTY(Replicated) 类名* 变量; 在.cpp内 加入方法GetLifetimeReplicatedProps #include &amp;lt;Net/UnrealNetwork.h&amp;gt; void 类名::Ge</description>
+      <description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位 我们需要将Actor::bRep</description>
     </item>
     
     <item>
