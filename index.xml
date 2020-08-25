@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>张杰的博客</title>
-    <link>zhangjie147.github.io/</link>
+    <link>/</link>
     <description>Recent content on 张杰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn-zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 19 Nov 2019 14:25:12 +0800</lastBuildDate>
     
-	<atom:link href="zhangjie147.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>笔记-UE4-多人联机 各类运行位子</title>
-      <link>zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</link>
+      <link>/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</link>
       <pubDate>Tue, 19 Nov 2019 14:25:12 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</guid>
+      <guid>/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</guid>
       <description>只在服务器上运行 GameMode AI PlayerController</description>
     </item>
     
     <item>
       <title>笔记-UE4-AI</title>
-      <link>zhangjie147.github.io/posts/ue4-ai/</link>
+      <link>/posts/ue4-ai/</link>
       <pubDate>Tue, 05 Nov 2019 14:25:12 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/ue4-ai/</guid>
+      <guid>/posts/ue4-ai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>笔记-UE4-多人联机-Replicate</title>
-      <link>zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
+      <link>/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
       <pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
+      <guid>/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
       <description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位 我们需要将Actor::bRep</description>
     </item>
     
     <item>
       <title>笔记-CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
-      <link>zhangjie147.github.io/posts/cocoscreator_scaleandslide/</link>
+      <link>/posts/cocoscreator_scaleandslide/</link>
       <pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/cocoscreator_scaleandslide/</guid>
+      <guid>/posts/cocoscreator_scaleandslide/</guid>
       <description>移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {</description>
     </item>
     
     <item>
       <title>笔记-CocosCreator Layout即时更新布局</title>
-      <link>zhangjie147.github.io/posts/laouut-update/</link>
+      <link>/posts/laouut-update/</link>
       <pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/laouut-update/</guid>
+      <guid>/posts/laouut-update/</guid>
       <description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
     </item>
     
     <item>
       <title>win10 安装Scoop、Hugo、Go等环境</title>
-      <link>zhangjie147.github.io/posts/install-hugo-go/</link>
+      <link>/posts/install-hugo-go/</link>
       <pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
       
-      <guid>zhangjie147.github.io/posts/install-hugo-go/</guid>
+      <guid>/posts/install-hugo-go/</guid>
       <description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
     </item>
     
     <item>
       <title>Email</title>
-      <link>zhangjie147.github.io/email-uri/</link>
+      <link>/email-uri/</link>
       <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>zhangjie147.github.io/email-uri/</guid>
+      <guid>/email-uri/</guid>
       <description> Email: 530784359@qq.com  </description>
     </item>
     
     <item>
       <title>About Hugo</title>
-      <link>zhangjie147.github.io/about-hugo/</link>
+      <link>/about-hugo/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>zhangjie147.github.io/about-hugo/</guid>
+      <guid>/about-hugo/</guid>
       <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
 It makes use of a variety of open source projects including:
  https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
