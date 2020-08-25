@@ -1,20 +1,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on 张杰的博客</title>
-		<link>https://zhangjie174.com/posts/</link>
+		<link>zhangjie147.github.io/posts/</link>
 		<description>Recent content in Posts on 张杰的博客</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>cn-zh</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Mon, 04 Nov 2019 17:25:12 +0800</lastBuildDate>
-		<atom:link href="https://zhangjie174.com/posts/index.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>Tue, 19 Nov 2019 14:25:12 +0800</lastBuildDate>
+		<atom:link href="zhangjie147.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>UE4-多人联机-Replicate</title>
-			<link>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
+			<title>笔记-UE4-多人联机 各类运行位子</title>
+			<link>zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</link>
+			<pubDate>Tue, 19 Nov 2019 14:25:12 +0800</pubDate>
+			
+			<guid>zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</guid>
+			<description>只在服务器上运行 GameMode AI PlayerController</description>
+			<content type="html"><![CDATA[
+
+<h2 id="只在服务器上运行">只在服务器上运行</h2>
+
+<ul>
+<li>GameMode</li>
+<li>AI</li>
+<li>PlayerController</li>
+</ul>
+]]></content>
+		</item>
+		
+		<item>
+			<title>笔记-UE4-AI</title>
+			<link>zhangjie147.github.io/posts/ue4-ai/</link>
+			<pubDate>Tue, 05 Nov 2019 14:25:12 +0800</pubDate>
+			
+			<guid>zhangjie147.github.io/posts/ue4-ai/</guid>
+			<description></description>
+			<content type="html"><![CDATA[]]></content>
+		</item>
+		
+		<item>
+			<title>笔记-UE4-多人联机-Replicate</title>
+			<link>zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
 			<pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
 			
-			<guid>https://zhangjie174.com/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
+			<guid>zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
 			<description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位 我们需要将Actor::bRep</description>
 			<content type="html"><![CDATA[
 
@@ -43,39 +72,31 @@
 
 <h4 id="方法二">方法二</h4>
 
-<pre><code>将变量声明 Replicated
+<p>将变量声明 Replicated</p>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="n">UPROPERTY</span><span class="p">(</span><span class="n">ReplicatedUsing</span><span class="o">=</span><span class="n">OnRep_A</span><span class="p">)</span>
+	<span class="kt">float</span> <span class="n">a</span><span class="p">;</span>
 
-```C++
-    UPROPERTY(ReplicatedUsing=OnRep_A)
-    float a;
+	<span class="n">UFUNCTION</span><span class="p">()</span>
+	<span class="kt">void</span> <span class="n">OnRep_A</span><span class="p">(...);</span>
 
-    UFUNCTION()
-    void OnRep_A(...);
-
-    void OnRep_A(...)
-    {
-        ...
-    }
-```
-
-C++声明此种同步属性，当属性在服务器发生变化时，对应的客户端自动调用OnRep函数，在服务器端，需要手动调用OnRep函数
-</code></pre>
+	<span class="kt">void</span> <span class="nf">OnRep_A</span><span class="p">(...)</span>
+	<span class="p">{</span>
+		<span class="p">...</span>
+	<span class="p">}</span>
+</code></pre></div>
+<p>C++声明此种同步属性，当属性在服务器发生变化时，对应的客户端自动调用OnRep函数，在服务器端，需要手动调用OnRep函数</p>
 
 <h4 id="以上都需要加入方法getlifetimereplicatedprops">以上都需要加入方法GetLifetimeReplicatedProps</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++">	<span class="cp">#include</span> <span class="cpf">&lt;Net/UnrealNetwork.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+	<span class="kt">void</span> <span class="n">A</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">TArray</span><span class="o">&lt;</span> <span class="n">FLifetimeProperty</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">OutLifetimeProps</span><span class="p">)</span> <span class="k">const</span>
+	<span class="p">{</span>
+		<span class="n">Super</span><span class="o">::</span><span class="n">GetLifetimeReplicatedProps</span><span class="p">(</span><span class="n">OutLifetimeProps</span><span class="p">);</span>
 
-<pre><code>```C++
-    #include &lt;Net/UnrealNetwork.h&gt;
-
-    void A::GetLifetimeReplicatedProps(TArray&lt; FLifetimeProperty &gt; &amp; OutLifetimeProps) const
-    {
-        Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-
-        DOREPLIFETIME(A, a);
-    }
-```
-
-可以用来使用条件复制（Conditional Replication）就可以实现属性只同步给部分客户端的功能
-</code></pre>
+		<span class="n">DOREPLIFETIME</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+	<span class="p">}</span>
+</code></pre></div>
+<p>可以用来使用条件复制（Conditional Replication）就可以实现属性只同步给部分客户端的功能</p>
 
 <hr />
 
@@ -146,11 +167,11 @@ C++声明此种同步属性，当属性在服务器发生变化时，对应的�
 		</item>
 		
 		<item>
-			<title>CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
-			<link>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</link>
+			<title>笔记-CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
+			<link>zhangjie147.github.io/posts/cocoscreator_scaleandslide/</link>
 			<pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
 			
-			<guid>https://zhangjie174.com/posts/cocoscreator_scaleandslide/</guid>
+			<guid>zhangjie147.github.io/posts/cocoscreator_scaleandslide/</guid>
 			<description>移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {</description>
 			<content type="html"><![CDATA[
 
@@ -256,11 +277,11 @@ C++声明此种同步属性，当属性在服务器发生变化时，对应的�
 		</item>
 		
 		<item>
-			<title>CocosCreator Layout即时更新布局</title>
-			<link>https://zhangjie174.com/posts/laouut-update/</link>
+			<title>笔记-CocosCreator Layout即时更新布局</title>
+			<link>zhangjie147.github.io/posts/laouut-update/</link>
 			<pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
 			
-			<guid>https://zhangjie174.com/posts/laouut-update/</guid>
+			<guid>zhangjie147.github.io/posts/laouut-update/</guid>
 			<description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
 			<content type="html"><![CDATA[
 
@@ -295,10 +316,10 @@ A.updateLayout()
 		
 		<item>
 			<title>win10 安装Scoop、Hugo、Go等环境</title>
-			<link>https://zhangjie174.com/posts/install-hugo-go/</link>
+			<link>zhangjie147.github.io/posts/install-hugo-go/</link>
 			<pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
 			
-			<guid>https://zhangjie174.com/posts/install-hugo-go/</guid>
+			<guid>zhangjie147.github.io/posts/install-hugo-go/</guid>
 			<description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
 			<content type="html"><![CDATA[
 
