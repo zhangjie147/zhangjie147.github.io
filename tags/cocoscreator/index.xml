@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CocosCreator on 张杰的博客</title>
+    <link>https://zhangjie147.github.io/tags/cocoscreator/</link>
+    <description>Recent content in CocosCreator on 张杰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Jun 2019 22:00:00 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/tags/cocoscreator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CocosCreator 触摸移动和缩放目标层的组件</title>
+      <link>https://zhangjie147.github.io/posts/cocoscreator_scaleandslide/</link>
+      <pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/cocoscreator_scaleandslide/</guid>
+      <description>使用注意  需要新建一个相机来专门拍摄目标节点  ScaleAndSlide.js
+cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层  target: cc.Node, //移动缩放目标层  camera: cc.Camera, //渲染目标层的相机  }, onLoad: function () { let self = this; //设定最大缩放  this.maxZoomRatio = 1.2; //计算最小缩放  this.minZoomRatio = cc.view.getVisibleSize().width / this.target.width; if (cc.view.getVisibleSize().height / this.target.height &amp;gt; this.minZoomRatio) { this.minZoomRatio = cc.view.getVisibleSize().height / this.target.height; } if (this.minZoomRatio &amp;gt; this.maxZoomRatio) this.maxZoomRatio = 1; //默认最大视野  self.camera.zoomRatio = this.minZoomRatio; self.camera.targetX = self.</description>
+    </item>
+    
+    <item>
+      <title>CocosCreator Layout即时更新布局</title>
+      <link>https://zhangjie147.github.io/posts/laouut-update/</link>
+      <pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/laouut-update/</guid>
+      <description>Layout 即时更新布局  updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout()  &amp;hellip;(Layout)
+ A(Layout)
+ B(Layout)
+     B.updateLayout() A.updateLayout() ....updateLayout()  当在使用节点的 zIndex 属性给 Layout 的子节点排序时。  在新加入一个子节点马上调用 updateLayout() ，会发现并没有达到效果。 这时我们需要先调用Node.sortAllChildren() (根据子节点的 zIndex 和 arrivalOrder 进行排序，正常情况下开发者不需要手动调用这个函数)
+&amp;gt;A(Layout) &amp;gt;&amp;gt;B(Node) # C.parent = A.node A.node.sortAllChildren() A.updateLayout() </description>
+    </item>
+    
+  </channel>
+</rss>

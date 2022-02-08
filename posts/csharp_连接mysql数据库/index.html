@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>C#_连接MySQL数据库</title>
+    <meta name="description" content="连接MySQL数据库">
+    <meta name="keywords" content='blog, gokarna, hugo, CSharp, MySQ'>
+
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="C#_连接MySQL数据库">
+    <meta property="og:description" content="连接MySQL数据库">
+    <meta property="og:image" content="/images/aaa.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C#_连接MySQL数据库">
+    <meta name="twitter:description" content="连接MySQL数据库">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>C#_连接MySQL数据库</h1>
+        <small role="doc-subtitle">连接MySQL数据库</small>
+        <p class="post-date">
+            02-08-2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/csharp">CSharp</a></li>
+        
+            <li class="post-tag"><a href="/tags/mysq">MySQ</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="先添加mysql的dll引用">先添加MySQL的DLL引用</h2>
+<h4 id="在mysql的安转目录下有-mysqldatadll-一般有多个版本-自己选择">在MySQL的安转目录下有 MySql.Data.dll 一般有多个版本 自己选择</h4>
+<p><img src="/images/CSharp_%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/1.png" alt="1"></p>
+<h4 id="在vs-项目-添加项目引用-浏览-添加mysqldatadll的引用">在vs 项目-&gt;添加项目引用-&gt;浏览 添加MySql.Data.dll的引用</h4>
+<p><img src="/images/CSharp_%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="3"></p>
+<p><img src="/images/CSharp_%E8%BF%9E%E6%8E%A5MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="2"></p>
+<h2 id="再在代码中调用">再在代码中调用</h2>
+<h4 id="引用">引用</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">    <span style="color:#66d9ef">using</span> MySql.Data.MySqlClient;
+</code></pre></div><h4 id="建立连接">建立连接</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">    <span style="color:#75715e">// 服务器地址；端口号；数据库；用户名；密码
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> connectStr = <span style="color:#e6db74">&#34;server=localhost;port=3306;database=****;user=root;password=****&#34;</span>;
+    MySqlConnection con = <span style="color:#66d9ef">new</span> MySqlConnection(connectStr);
+</code></pre></div><h4 id="连接">连接</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.con.State == System.Data.ConnectionState.Closed)
+    {
+        <span style="color:#66d9ef">try</span>
+        {
+            <span style="color:#75715e">//连接数据库
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">this</span>.con.Open();
+            Console.WriteLine(<span style="color:#e6db74">&#34;连接成功&#34;</span>);
+        }
+        <span style="color:#66d9ef">catch</span> (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+        <span style="color:#75715e">//finally
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//{
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//    // 关闭连接
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//    con.Close();
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//    Console.WriteLine(&#34;数据库已关闭&#34;);
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//}
+</span><span style="color:#75715e"></span>    }
+</code></pre></div><h4 id="sql语句查询">SQL语句查询</h4>
+<h5 id="使用-mysqlcommand数据不会存储需要定义一个数组手动存储">使用 MySqlCommand（数据不会存储，需要定义一个数组手动存储）</h5>
+<h5 id="使用适配器-mysqldataadapter将数据存储到内存中占用内存">使用适配器 MySqlDataAdapter（将数据存储到内存中，占用内存）</h5>
+<h5 id="使用事务-begintransaction此方法用来批量执行一组命令一个命令错误就会全部回滚防止误提交问题">使用事务 BeginTransaction（此方法用来批量执行一组命令，一个命令错误就会全部回滚，防止误提交问题）</h5>
+<h5 id="mysqldataadapter">MySqlDataAdapter</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">    <span style="color:#66d9ef">try</span>
+    {
+        DataSet ds = <span style="color:#66d9ef">new</span> DataSet();
+        MySqlDataAdapter daa = <span style="color:#66d9ef">new</span> MySqlDataAdapter(<span style="color:#e6db74">&#34;SQL语句&#34;</span>, con);
+        daa.Fill(ds);
+        <span style="color:#66d9ef">return</span> ds;
+    }
+    <span style="color:#66d9ef">catch</span>
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    }
+</code></pre></div>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

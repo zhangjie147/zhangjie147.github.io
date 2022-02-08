@@ -1,123 +1,279 @@
 <!DOCTYPE html>
-<html lang="cn-zh" style="background:#2E2121">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#2E2121">
-	<meta name="msapplication-TileColor" content="#2E2121">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="">
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
 
-<meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zhangjie147.github.io/posts/" />
+    
+    
+    
+    
+    
+    
 
-<meta property="og:updated_time" content="2019-11-19T14:25:12&#43;08:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+    
+    <title>Posts</title>
+    <meta name="description" content="&#43;----------------------------------------&#43;">
+    <meta name="keywords" content='blog, gokarna, hugo'>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Posts">
+    <meta property="og:description" content="&#43;----------------------------------------&#43;">
+    <meta property="og:image" content="/images/aaa.jpg">
 
-	<title>Posts</title>
-	<link rel="alternate" type="application/rss+xml+xml" href="https://zhangjie147.github.io/posts/index.xml" title="张杰的博客" />
-	<link rel="stylesheet" href="https://zhangjie147.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Posts">
+    <meta name="twitter:description" content="&#43;----------------------------------------&#43;">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
 </head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://zhangjie147.github.io/">张杰的博客</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://zhangjie147.github.io/posts/">Posts</a>
-					<a href="https://zhangjie147.github.io/about-hugo/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="email-uri/" target="_blank" rel="noopener me" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a><a href="https://github.com/zhangjie147/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://zhangjie147.github.io/posts/">Posts</a></li>
-			<li><a href="https://zhangjie147.github.io/about-hugo/">About</a></li>
-		</ul>
-	</div>
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="container list-posts">
+
+    <h1 class="list-title">
+        
+            笔记
+        
+        </h2>
+
+    
+
+    <h2 class="posts-year">2022-02</h2><article class="post-title">
+    <a href="/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/" class="post-link">C#_WinFrom项目打开Console接收输出</a>
+    <div class="flex-break"></div>
+    <span class="post-date">02-08-2022</span>
+</article>
+<article class="post-title">
+    <a href="/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-link">C#_连接MySQL数据库</a>
+    <div class="flex-break"></div>
+    <span class="post-date">02-08-2022</span>
+</article>
+<article class="post-title">
+    <a href="/posts/csharp_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E5%85%B7%E7%AE%B1/" class="post-link">C#_自定义控件加入工具箱</a>
+    <div class="flex-break"></div>
+    <span class="post-date">02-08-2022</span>
+</article>
+<article class="post-title">
+    <a href="/posts/python_ncr%E8%A7%A3%E7%A0%81/" class="post-link">Python_NCR解码</a>
+    <div class="flex-break"></div>
+    <span class="post-date">02-08-2022</span>
+</article>
+
+    
+
+    <h2 class="posts-year">2021-09</h2><article class="post-title">
+    <a href="/posts/ue4_%E5%8D%95%E5%90%91%E6%9D%BF/" class="post-link">UE4_单向板</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-23-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_%E8%8C%83%E5%9B%B4%E4%BC%A4%E5%AE%B3/" class="post-link">UE4_范围伤害</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-23-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_%E6%AD%A3%E5%B8%B8%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="post-link">UE4_正常表达式</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-17-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_uclass/" class="post-link">UE4_UCLASS()</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-13-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/%E9%80%9A%E8%BF%87%E7%BB%A7%E6%89%BFublueprintfunctionlibrary%E7%9A%84%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%93%9D%E5%9B%BE%E4%B8%8Ec&#43;&#43;%E7%9B%B8%E4%BA%92%E9%80%9A%E4%BF%A1/" class="post-link">UE4_蓝图与C&#43;&#43;相互通信</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-13-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/" class="post-link">UE4_C&#43;&#43;_事件委托（代理）</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-10-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-link">UE4_函数与事件的区别</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-10-2021</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4_%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/" class="post-link">UE4_加载资源</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-03-2021</span>
+</article>
+
+    
+
+    <h2 class="posts-year">2021-08</h2><article class="post-title">
+    <a href="/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="post-link">UE4_资源加载的几种方式</a>
+    <div class="flex-break"></div>
+    <span class="post-date">08-28-2021</span>
+</article>
+
+    
+
+    <h2 class="posts-year">2020-09</h2><article class="post-title">
+    <a href="/posts/cmd-%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81/" class="post-link">CMD-编码</a>
+    <div class="flex-break"></div>
+    <span class="post-date">09-07-2020</span>
+</article>
+
+    
+
+    <h2 class="posts-year">2019-11</h2><article class="post-title">
+    <a href="/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/" class="post-link">UE4-多人联机 各类运行位子</a>
+    <div class="flex-break"></div>
+    <span class="post-date">11-19-2019</span>
+</article>
+<article class="post-title">
+    <a href="/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/" class="post-link">UE4-多人联机-Replicate</a>
+    <div class="flex-break"></div>
+    <span class="post-date">11-04-2019</span>
+</article>
+
+    
+
+    <h2 class="posts-year">2019-06</h2><article class="post-title">
+    <a href="/posts/cocoscreator_scaleandslide/" class="post-link">CocosCreator 触摸移动和缩放目标层的组件</a>
+    <div class="flex-break"></div>
+    <span class="post-date">06-20-2019</span>
+</article>
+<article class="post-title">
+    <a href="/posts/laouut-update/" class="post-link">CocosCreator Layout即时更新布局</a>
+    <div class="flex-break"></div>
+    <span class="post-date">06-13-2019</span>
+</article>
+<article class="post-title">
+    <a href="/posts/install-hugo-go/" class="post-link">win10 安装Scoop、Hugo、Go等环境</a>
+    <div class="flex-break"></div>
+    <span class="post-date">06-12-2019</span>
+</article>
+
+    
+
+</div>
 
 
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Posts</h1>
-		<div class="posts-group">
-			<div class="post-year"  background="#000000" id="2019-11">2019-11</div>
-			<ul class="posts-list">
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/">
-						<span class="post-title">笔记-UE4-多人联机 各类运行位子</span>
-						<span class="post-day">11月19日</span>
-					</a>
-				</li>
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/ue4-ai/">
-						<span class="post-title">笔记-UE4-AI</span>
-						<span class="post-day">11月5日</span>
-					</a>
-				</li>
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/">
-						<span class="post-title">笔记-UE4-多人联机-Replicate</span>
-						<span class="post-day">11月4日</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="posts-group">
-			<div class="post-year"  background="#000000" id="2019-06">2019-06</div>
-			<ul class="posts-list">
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/cocoscreator_scaleandslide/">
-						<span class="post-title">笔记-CocosCreator 一个通过触摸移动和缩放目标层的组件</span>
-						<span class="post-day">6月20日</span>
-					</a>
-				</li>
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/laouut-update/">
-						<span class="post-title">笔记-CocosCreator Layout即时更新布局</span>
-						<span class="post-day">6月13日</span>
-					</a>
-				</li>
-				<li class="post-item">
-					<a href="https://zhangjie147.github.io/posts/install-hugo-go/">
-						<span class="post-title">win10 安装Scoop、Hugo、Go等环境</span>
-						<span class="post-day">6月12日</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</main>
-
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://zhangjie147.github.io/">Jie Zhang</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://zhangjie147.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
-
-
-	<script src="https://zhangjie147.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
-
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
 </body>
-
 </html>

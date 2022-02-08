@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>UE4_资源加载的几种方式</title>
+    <meta name="description" content="UE4_资源加载的几种方式">
+    <meta name="keywords" content='blog, gokarna, hugo, UE4'>
+
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UE4_资源加载的几种方式">
+    <meta property="og:description" content="UE4_资源加载的几种方式">
+    <meta property="og:image" content="/images/aaa.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UE4_资源加载的几种方式">
+    <meta name="twitter:description" content="UE4_资源加载的几种方式">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>UE4_资源加载的几种方式</h1>
+        <small role="doc-subtitle">UE4_资源加载的几种方式</small>
+        <p class="post-date">
+            08-28-2021
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/ue4">UE4</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="资源加载的几种方式">资源加载的几种方式</h2>
+<h3 id="1构造时引用">1构造时引用</h3>
+<h4 id="此种方式是在类的构造方法中使用使用constructhelpersfobjectfinder方法可以实现在引用指定的资源文件贴图特效材质等等都可以使用有一点需要注意的就是这种方式一定只能在构造方法中使用如果试图自己创建一个方法并且在这个方法中使用constructhelpersfobjectfinder的方式去引用资源游戏则会崩溃">此种方式是在类的构造方法中使用，使用ConstructHelpers::FObjectFinder()方法可以实现在引用指定的资源文件，贴图，特效，材质等等都可以使用。有一点需要注意的就是这种方式一定只能在构造方法中使用，如果试图自己创建一个方法并且在这个方法中使用ConstructHelpers::FObjectFinder的方式去引用资源，游戏则会崩溃</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    UStaticMeshComponent<span style="color:#f92672">*</span> mesh;
+    mesh <span style="color:#f92672">=</span> CreateDefaultSubobject(TEXT(<span style="color:#e6db74">&#34;Mesh&#34;</span>));
+    
+    <span style="color:#75715e">// &#34;/Game/Maze/Map/Mash/2wall_2&#34; 可在UE4中右键资源复制引用
+</span><span style="color:#75715e"></span>    ConstructorHelpers<span style="color:#f92672">::</span>FObjectFinder<span style="color:#f92672">&lt;</span>UStaticMesh<span style="color:#f92672">&gt;</span> meshAsset(TEXT(<span style="color:#e6db74">&#34;mesh asset path&#34;</span>))
+    
+    mesh <span style="color:#f92672">-&gt;</span>SetStaticMesh(meshAsset.Object);
+</code></pre></div><h3 id="2运行时引用">2运行时引用</h3>
+<h4 id="可以实现在运行中引用指定路径的资源此时它就不是使用constructhelpers这个类去实现了需要用到staticloadobject以下是示例代码">可以实现在运行中引用指定路径的资源。此时它就不是使用ConstructHelpers这个类去实现了，需要用到StaticLoadObject，以下是示例代码</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    UStaticMesh<span style="color:#f92672">*</span> AMyActor<span style="color:#f92672">::</span>GetStaticMeshByName(<span style="color:#66d9ef">const</span> FString<span style="color:#f92672">&amp;</span> AssetName){
+        <span style="color:#75715e">//&#34;StaticMesh&#39;/Engine/BasicShapes/Cube.Cube&#39;&#34;
+</span><span style="color:#75715e"></span>        FString Paths <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;StaticMesh&#39;/Game/TestFolder/Product1/Geometries/&#34;</span>;
+        Paths.Append(AssetName).Append(<span style="color:#e6db74">&#34;.&#34;</span>).Append(AssetName).Append(<span style="color:#e6db74">&#34;&#39;&#34;</span>);
+        UStaticMesh<span style="color:#f92672">*</span> ReturnMesh <span style="color:#f92672">=</span> Cast<span style="color:#f92672">&lt;</span>UStaticMesh<span style="color:#f92672">&gt;</span>(StaticLoadObject(UStaticMesh<span style="color:#f92672">::</span>StaticClass(), NULL, <span style="color:#f92672">*</span>Paths));
+        <span style="color:#66d9ef">return</span> ReturnMesh;
+    }
+
+</code></pre></div><h3 id="3直接属性引用">3直接属性引用</h3>
+<h4 id="通过在头文件中定义变量指针并将其设置为upropertyeditdefaultsonly之后在蓝图中将此变量赋予资源最后就可以直接引用该变量设置资源了不过这种方式似乎是不能动态控制就是说点击play按钮就全部会默认都加载">通过在头文件中定义变量指针，并将其设置为UPROPERTY(EditDefaultsOnly),之后在蓝图中将此变量赋予资源，最后就可以直接引用该变量设置资源了。不过这种方式似乎是不能动态控制，就是说点击Play按钮就全部会默认都加载</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">/** construction start sound stinger */</span>
+    UPROPERTY(EditDefaultsOnly, Category<span style="color:#f92672">=</span>Mesh)
+    
+    UStaticMesh<span style="color:#f92672">*</span> MeshData;
+
+</code></pre></div><h3 id="4间接属性引用">4间接属性引用</h3>
+<h4 id="间接属性引用跟第3种方法有点像同样用到了upropertyeditdefaulsonly但是不同的是它声明变量是需要使用tsoftobjectptr例如tsoftobjectptrustaticmesh-meshdata这个形式表示该变量以字符串形式与模板代码存储在一起一边安全地检查资源是否已经加载而不是可以在蓝图中设置完资源后就直接使用了这种方式是可以控制什么时候加载该资源并且加载需要手动写代码加载加载之前将对该资源进行检查看是否加载如果没有加载会使用fstreamingmanager-执行同步加载如果已经加载则会直接返回tsoftobjectptr中的ustaticmesh指针">间接属性引用跟第3种方法有点像同样用到了UPROPERTY(EditDefaulsOnly)，但是不同的是它声明变量是需要使用TSoftObjectPtr。例如TSoftObjectPtr&lt;UStaticMesh&gt; MeshData。这个形式表示该变量以字符串形式与模板代码存储在一起一边安全地检查资源是否已经加载，而不是可以在蓝图中设置完资源后就直接使用了。这种方式是可以控制什么时候加载该资源，并且加载需要手动写代码加载，加载之前将对该资源进行检查看是否加载。如果没有加载，会使用FStreamingManager 执行同步加载，如果已经加载，则会直接返回TSoftObjectPtr中的UStaticMesh指针</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">void</span> ASoftActor<span style="color:#f92672">::</span>DynamicUpdateStaticMesh()
+{
+    FStreamableManager<span style="color:#f92672">&amp;</span> StreamableManager <span style="color:#f92672">=</span> UAssetManager<span style="color:#f92672">::</span>Get().GetStreamableManager();
+    <span style="color:#66d9ef">if</span> (MeshData.IsPending())
+    {
+        <span style="color:#66d9ef">const</span> FSoftObjectPath<span style="color:#f92672">&amp;</span> AssetRef <span style="color:#f92672">=</span> MeshData.ToSoftObjectPath();
+        MeshData <span style="color:#f92672">=</span> Cast<span style="color:#f92672">&lt;</span>UStaticMesh<span style="color:#f92672">&gt;</span>(StreamableManager.LoadSynchronous(AssetRef));
+        <span style="color:#66d9ef">if</span> (MeshData.Get())
+        {
+            BaseMesh<span style="color:#f92672">-&gt;</span>SetStaticMesh(MeshData.Get());
+        }
+    }
+    <span style="color:#66d9ef">else</span>
+    {
+        <span style="color:#66d9ef">if</span> (MeshData.Get())
+        {
+            BaseMesh<span style="color:#f92672">-&gt;</span>SetStaticMesh(MeshData.Get());
+        }
+    }
+}
+</code></pre></div>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

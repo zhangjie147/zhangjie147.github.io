@@ -1,114 +1,186 @@
 <!DOCTYPE html>
-<html lang="cn-zh" style="background:#2E2121">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#2E2121">
-	<meta name="msapplication-TileColor" content="#2E2121">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta itemprop="name" content="笔记-UE4-多人联机 各类运行位子">
-<meta itemprop="description" content="只在服务器上运行 GameMode AI PlayerController">
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
 
+    
+    
+    
+    
+    
+    
 
-<meta itemprop="datePublished" content="2019-11-19T14:25:12&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-19T14:25:12&#43;08:00" />
-<meta itemprop="wordCount" content="11">
+    
+    <title>UE4-多人联机 各类运行位子</title>
+    <meta name="description" content="UE4-多人联机 各类运行位子">
+    <meta name="keywords" content='blog, gokarna, hugo, UE4'>
 
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UE4-多人联机 各类运行位子">
+    <meta property="og:description" content="UE4-多人联机 各类运行位子">
+    <meta property="og:image" content="/images/aaa.jpg">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UE4-多人联机 各类运行位子">
+    <meta name="twitter:description" content="UE4-多人联机 各类运行位子">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
 
-<meta itemprop="keywords" content="" />
-<meta property="og:title" content="笔记-UE4-多人联机 各类运行位子" />
-<meta property="og:description" content="只在服务器上运行 GameMode AI PlayerController" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/" />
-<meta property="article:published_time" content="2019-11-19T14:25:12&#43;08:00"/>
-<meta property="article:modified_time" content="2019-11-19T14:25:12&#43;08:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="笔记-UE4-多人联机 各类运行位子"/>
-<meta name="twitter:description" content="只在服务器上运行 GameMode AI PlayerController"/>
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/" />
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
 
-	<title>笔记-UE4-多人联机 各类运行位子</title>
-	<link rel="stylesheet" href="https://zhangjie147.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
-	
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
 </head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://zhangjie147.github.io/">张杰的博客</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://zhangjie147.github.io/posts/">Posts</a>
-					<a href="https://zhangjie147.github.io/about-hugo/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="email-uri/" target="_blank" rel="noopener me" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a><a href="https://github.com/zhangjie147/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://zhangjie147.github.io/posts/">Posts</a></li>
-			<li><a href="https://zhangjie147.github.io/about-hugo/">About</a></li>
-		</ul>
-	</div>
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
 
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
 
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>11月19日, 2019</span></div>
-				<h1>笔记-UE4-多人联机 各类运行位子</h1>
-			</header>
-			<div class="content">
-				
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
 
-<h2 id="只在服务器上运行">只在服务器上运行<a href="#只在服务器上运行" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
 
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>UE4-多人联机 各类运行位子</h1>
+        <small role="doc-subtitle">UE4-多人联机 各类运行位子</small>
+        <p class="post-date">
+            11-19-2019
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/ue4">UE4</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="只在服务器上运行">只在服务器上运行</h2>
 <ul>
 <li>GameMode</li>
 <li>AI</li>
 <li>PlayerController</li>
 </ul>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>11 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-11-19 14:25 &#43;0800</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="prev-post" href="https://zhangjie147.github.io/posts/ue4-ai/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>笔记-UE4-AI</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
+        </p>
+    </div>
 </div>
-	</main>
-
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://zhangjie147.github.io/">Jie Zhang</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://zhangjie147.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
 
 
-	<script src="https://zhangjie147.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
 
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
 </body>
-
 </html>

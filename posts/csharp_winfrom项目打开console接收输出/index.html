@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>C#_WinFrom项目打开Console接收输出</title>
+    <meta name="description" content="WinFrom项目打开Console接收输出">
+    <meta name="keywords" content='blog, gokarna, hugo, WinForm, CSharp'>
+
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="C#_WinFrom项目打开Console接收输出">
+    <meta property="og:description" content="WinFrom项目打开Console接收输出">
+    <meta property="og:image" content="/images/aaa.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C#_WinFrom项目打开Console接收输出">
+    <meta name="twitter:description" content="WinFrom项目打开Console接收输出">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>C#_WinFrom项目打开Console接收输出</h1>
+        <small role="doc-subtitle">WinFrom项目打开Console接收输出</small>
+        <p class="post-date">
+            02-08-2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/winform">WinForm</a></li>
+        
+            <li class="post-tag"><a href="/tags/csharp">CSharp</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="在programcs-class开头引入">在Program.cs Class开头引入</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#">
+    <span style="color:#66d9ef">using</span> System.Runtime.InteropServices;
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [DllImport(&#34;kernel32.dll&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> Boolean AllocConsole();
+<span style="color:#a6e22e">    
+</span><span style="color:#a6e22e">    [DllImport(&#34;kernel32.dll&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> Boolean FreeConsole();
+
+</code></pre></div><h3 id="调用allocconsole开启">调用AllocConsole()开启</h3>
+<h3 id="调用freeconsole关闭">调用FreeConsole()关闭</h3>
+<h3 id="代码">代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C#" data-lang="C#"><span style="color:#66d9ef">using</span> <span style="color:#960050;background-color:#1e0010">/</span>....../
+
+<span style="color:#66d9ef">using</span> System.Runtime.InteropServices;
+
+<span style="color:#66d9ef">namespace</span> ......
+{
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+    {
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">///  The main entry point for the application.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// 
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">        [DllImport(&#34;kernel32.dll&#34;)]</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> Boolean AllocConsole();
+<span style="color:#a6e22e">        [DllImport(&#34;kernel32.dll&#34;)]</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> Boolean FreeConsole();
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">        [STAThread]</span>
+        <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main()
+        {
+            AllocConsole();
+
+            /....../
+
+            FreeConsole();
+        }
+    }
+}
+</code></pre></div>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

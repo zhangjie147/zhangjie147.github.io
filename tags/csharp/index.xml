@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSharp on 张杰的博客</title>
+    <link>https://zhangjie147.github.io/tags/csharp/</link>
+    <description>Recent content in CSharp on 张杰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Feb 2022 20:36:03 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#_WinFrom项目打开Console接收输出</title>
+      <link>https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/</link>
+      <pubDate>Tue, 08 Feb 2022 20:36:03 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/</guid>
+      <description>在Program.cs Class开头引入 using System.Runtime.InteropServices; [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean AllocConsole(); [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean FreeConsole(); 调用AllocConsole()开启 调用FreeConsole()关闭 代码 using /....../ using System.Runtime.InteropServices; namespace ...... { static class Program { /// &amp;lt;summary&amp;gt;  /// The main entry point for the application.  /// &amp;lt;/summary&amp;gt;  /// [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean AllocConsole(); [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean FreeConsole(); [STAThread] static void Main() { AllocConsole(); /....../ FreeConsole(); } } } </description>
+    </item>
+    
+    <item>
+      <title>C#_连接MySQL数据库</title>
+      <link>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Tue, 08 Feb 2022 20:01:49 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>先添加MySQL的DLL引用 在MySQL的安转目录下有 MySql.Data.dll 一般有多个版本 自己选择 在vs 项目-&amp;gt;添加项目引用-&amp;gt;浏览 添加MySql.Data.dll的引用 再在代码中调用 引用 using MySql.Data.MySqlClient; 建立连接 // 服务器地址；端口号；数据库；用户名；密码  public static string connectStr = &amp;#34;server=localhost;port=3306;database=****;user=root;password=****&amp;#34;; MySqlConnection con = new MySqlConnection(connectStr); 连接 if (this.con.State == System.Data.ConnectionState.Closed) { try { //连接数据库  this.con.Open(); Console.WriteLine(&amp;#34;连接成功&amp;#34;); } catch (Exception e) { Console.WriteLine(e.ToString()); } //finally  //{  // // 关闭连接  // con.Close();  // Console.WriteLine(&amp;#34;数据库已关闭&amp;#34;);  //}  } SQL语句查询 使用 MySqlCommand（数据不会存储，需要定义一个数组手动存储） 使用适配器 MySqlDataAdapter（将数据存储到内存中，占用内存） 使用事务 BeginTransaction（此方法用来批量执行一组命令，一个命令错误就会全部回滚，防止误提交问题） MySqlDataAdapter try { DataSet ds = new DataSet(); MySqlDataAdapter daa = new MySqlDataAdapter(&amp;#34;SQL语句&amp;#34;, con); daa.</description>
+    </item>
+    
+    <item>
+      <title>C#_自定义控件加入工具箱</title>
+      <link>https://zhangjie147.github.io/posts/csharp_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E5%85%B7%E7%AE%B1/</link>
+      <pubDate>Tue, 08 Feb 2022 19:37:50 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/csharp_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E5%85%B7%E7%AE%B1/</guid>
+      <description>在 工具-&amp;gt;选项-&amp;gt;Windows 窗口设计器-&amp;gt;常规 将 自动填充工具箱 设置为 True 这样建立的自定义窗体控件就会在编译后自动加入工具箱 </description>
+    </item>
+    
+  </channel>
+</rss>

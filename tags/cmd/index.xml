@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cmd on 张杰的博客</title>
+    <link>https://zhangjie147.github.io/tags/cmd/</link>
+    <description>Recent content in cmd on 张杰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 07 Sep 2020 22:19:33 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/tags/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMD-编码</title>
+      <link>https://zhangjie147.github.io/posts/cmd-%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Mon, 07 Sep 2020 22:19:33 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/cmd-%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81/</guid>
+      <description>65001 UTF-8代码页 950 繁体中文 936 简体中文默认的GBK 437 MS-DOS 美国英语  临时修改 将当前控制台编码设置为UTF-8，则输入 CHCP 65001
+永久修改 在运行中通过regedit进入注册表找到
+HKEY_CURRENT_USER\Console%SystemRoot%_system32_cmd.exe
+新建一个 DWORD（32位值）,命名为CodePage，值设为65001
+已有CodePage的话，修改它，改为十进制，65001</description>
+    </item>
+    
+  </channel>
+</rss>

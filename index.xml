@@ -1,60 +1,171 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>张杰的博客</title>
     <link>https://zhangjie147.github.io/</link>
     <description>Recent content on 张杰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>cn-zh</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 19 Nov 2019 14:25:12 +0800</lastBuildDate>
-    
-	<atom:link href="https://zhangjie147.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Feb 2022 20:36:03 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>笔记-UE4-多人联机 各类运行位子</title>
-      <link>https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</link>
-      <pubDate>Tue, 19 Nov 2019 14:25:12 +0800</pubDate>
+      <title>C#_WinFrom项目打开Console接收输出</title>
+      <link>https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/</link>
+      <pubDate>Tue, 08 Feb 2022 20:36:03 +0800</pubDate>
       
-      <guid>https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</guid>
-      <description>只在服务器上运行 GameMode AI PlayerController</description>
+      <guid>https://zhangjie147.github.io/posts/csharp_winfrom%E9%A1%B9%E7%9B%AE%E6%89%93%E5%BC%80console%E6%8E%A5%E6%94%B6%E8%BE%93%E5%87%BA/</guid>
+      <description>在Program.cs Class开头引入 using System.Runtime.InteropServices; [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean AllocConsole(); [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean FreeConsole(); 调用AllocConsole()开启 调用FreeConsole()关闭 代码 using /....../ using System.Runtime.InteropServices; namespace ...... { static class Program { /// &amp;lt;summary&amp;gt;  /// The main entry point for the application.  /// &amp;lt;/summary&amp;gt;  /// [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean AllocConsole(); [DllImport(&amp;#34;kernel32.dll&amp;#34;)] public static extern Boolean FreeConsole(); [STAThread] static void Main() { AllocConsole(); /....../ FreeConsole(); } } } </description>
     </item>
     
     <item>
-      <title>笔记-UE4-AI</title>
-      <link>https://zhangjie147.github.io/posts/ue4-ai/</link>
-      <pubDate>Tue, 05 Nov 2019 14:25:12 +0800</pubDate>
+      <title>C#_连接MySQL数据库</title>
+      <link>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Tue, 08 Feb 2022 20:01:49 +0800</pubDate>
       
-      <guid>https://zhangjie147.github.io/posts/ue4-ai/</guid>
-      <description></description>
+      <guid>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>先添加MySQL的DLL引用 在MySQL的安转目录下有 MySql.Data.dll 一般有多个版本 自己选择 在vs 项目-&amp;gt;添加项目引用-&amp;gt;浏览 添加MySql.Data.dll的引用 再在代码中调用 引用 using MySql.Data.MySqlClient; 建立连接 // 服务器地址；端口号；数据库；用户名；密码  public static string connectStr = &amp;#34;server=localhost;port=3306;database=****;user=root;password=****&amp;#34;; MySqlConnection con = new MySqlConnection(connectStr); 连接 if (this.con.State == System.Data.ConnectionState.Closed) { try { //连接数据库  this.con.Open(); Console.WriteLine(&amp;#34;连接成功&amp;#34;); } catch (Exception e) { Console.WriteLine(e.ToString()); } //finally  //{  // // 关闭连接  // con.Close();  // Console.WriteLine(&amp;#34;数据库已关闭&amp;#34;);  //}  } SQL语句查询 使用 MySqlCommand（数据不会存储，需要定义一个数组手动存储） 使用适配器 MySqlDataAdapter（将数据存储到内存中，占用内存） 使用事务 BeginTransaction（此方法用来批量执行一组命令，一个命令错误就会全部回滚，防止误提交问题） MySqlDataAdapter try { DataSet ds = new DataSet(); MySqlDataAdapter daa = new MySqlDataAdapter(&amp;#34;SQL语句&amp;#34;, con); daa.</description>
     </item>
     
     <item>
-      <title>笔记-UE4-多人联机-Replicate</title>
-      <link>https://zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
-      <pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
+      <title>C#_自定义控件加入工具箱</title>
+      <link>https://zhangjie147.github.io/posts/csharp_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E5%85%B7%E7%AE%B1/</link>
+      <pubDate>Tue, 08 Feb 2022 19:37:50 +0800</pubDate>
       
-      <guid>https://zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
-      <description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位 我们需要将Actor::bRep</description>
+      <guid>https://zhangjie147.github.io/posts/csharp_%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E5%8A%A0%E5%85%A5%E5%B7%A5%E5%85%B7%E7%AE%B1/</guid>
+      <description>在 工具-&amp;gt;选项-&amp;gt;Windows 窗口设计器-&amp;gt;常规 将 自动填充工具箱 设置为 True 这样建立的自定义窗体控件就会在编译后自动加入工具箱 </description>
     </item>
     
     <item>
-      <title>笔记-CocosCreator 一个通过触摸移动和缩放目标层的组件</title>
+      <title>Python_NCR解码</title>
+      <link>https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/</link>
+      <pubDate>Tue, 08 Feb 2022 19:08:14 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/</guid>
+      <description>NCR编码有&amp;amp;#开头和&amp;amp;#x开头 先将&amp;amp;#开头十进制全部转换为&amp;amp;#x开头十六进制的 如&amp;amp;#16 &amp;mdash;》&amp;amp;#x10 # 找到&amp;amp;#开头 re.sub(&amp;#34;&amp;amp;#(?P&amp;lt;number&amp;gt;\d+)&amp;#34;,NCR._strChange10to16,line) # 转换进制 def _strChange10to16(matched): intStr = matched.group(&amp;#34;number&amp;#34;) intStr = &amp;#39;&amp;amp;#x&amp;#39; + hex(int(intStr,10)).replace(r&amp;#39;0x&amp;#39;,&amp;#39;&amp;#39;).upper() return intStr 将不是四位&amp;amp;#x开头十六进制编码补全为四位的 如&amp;amp;#xFF,&amp;amp;#xFFF &amp;mdash;》&amp;amp;#x00FF,&amp;amp;#x0FFF line = re.sub(r&amp;#39;&amp;amp;#x([A-F0-9]{2});&amp;#39;, r&amp;#39;&amp;amp;#x00\1;&amp;#39;, line) line = re.sub(r&amp;#39;&amp;amp;#x([A-F0-9]{3});&amp;#39;, r&amp;#39;&amp;amp;#x0\1;&amp;#39;, line) 使用Python的encode(),decode()函数转化 _t = _t.replace(&amp;#39;;&amp;#39;,&amp;#39;&amp;#39;)\ # 去掉&amp;#34;;&amp;#34; .replace(&amp;#39;&amp;amp;#x&amp;#39;,&amp;#39;\\u&amp;#39;)\ # &amp;#39;&amp;amp;#x&amp;#39; 替换为 &amp;#39;\\u&amp;#39; .encode(&amp;#39;utf-8&amp;#39;)\ # 转码 .decode(&amp;#39;unicode_escape&amp;#39;) 完整代码 #!/usr/bin/python import re,os class NCR(): def _strChange10to16(matched): intStr = matched.group(&amp;#34;number&amp;#34;) intStr = &amp;#39;&amp;amp;#x&amp;#39; + hex(int(intStr,10)).replace(r&amp;#39;0x&amp;#39;,&amp;#39;&amp;#39;).upper() return intStr # 整段转换编码 我不会区分NCR编码外的其他能容 用下面的 # def dec(_t): # _t1 = re.</description>
+    </item>
+    
+    <item>
+      <title>UE4_单向板</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E5%8D%95%E5%90%91%E6%9D%BF/</link>
+      <pubDate>Thu, 23 Sep 2021 19:55:51 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_%E5%8D%95%E5%90%91%E6%9D%BF/</guid>
+      <description>单向板可以修改单向板碰转响应或者要通过的对象的碰转响应
+ 修改单向板的话如果对个对象一起通过单向板会出现错误 修改通过对象，因为对象有体积则需要对相近的多层单向板做出判断  下面修改通过对象例子 先创建一个单向板的对象通道
+将上层碰撞体的对象类型修改为自己创建的响应设置为阻挡
+在创建一个碰撞体的作为从下方碰撞的检测
+在玩家创建函数来修改自身与单向板碰撞响应方式 建立一个变量可以用于检测多层的单向板
+在下层碰撞响应调用函数</description>
+    </item>
+    
+    <item>
+      <title>UE4_范围伤害</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E8%8C%83%E5%9B%B4%E4%BC%A4%E5%AE%B3/</link>
+      <pubDate>Thu, 23 Sep 2021 12:15:41 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_%E8%8C%83%E5%9B%B4%E4%BC%A4%E5%AE%B3/</guid>
+      <description>想要范围伤害被墙阻挡可以新建通道 Damage Prevention Channel
+这样就可以实现 1和2 有伤害 3 没有伤害</description>
+    </item>
+    
+    <item>
+      <title>UE4_正常表达式</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E6%AD%A3%E5%B8%B8%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Fri, 17 Sep 2021 21:11:17 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_%E6%AD%A3%E5%B8%B8%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>Regex 实现 Return True：输入非法，不是设置的正则表达是值
+Return False：设置正常值
+正则表达式输入数字和字母：[^a-zA-Z0-9]
+bool UFunctionLib::Regex(const FString str, const FString Reg) { FRegexPattern Pattern(Reg); FRegexMatcher regMatcher(Pattern, str); regMatcher.SetLimits(0, str.Len()); return regMatcher.FindNext(); } </description>
+    </item>
+    
+    <item>
+      <title>UE4_UCLASS()</title>
+      <link>https://zhangjie147.github.io/posts/ue4_uclass/</link>
+      <pubDate>Mon, 13 Sep 2021 17:10:58 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_uclass/</guid>
+      <description>类说明符 在声明类时，声明上可添加修饰符以控制引擎和编辑器的不同方面的类表现
+ Abstract  抽象类说明符将类声明为 “抽象基类”, 防止用户在虚幻编辑器中向世界添加此类的参与者, 或在游戏中创建此类的实例。这对于那些本身没有意义的类很有用。例如, ATriggerBase 基类是抽象的, 而 ATriggerBox 子类别不是抽象的, 您可以在世界上放置一个 ATriggerBox 类的实例, 并且它是有用的, 而 ATriggerBase 的实例本身并不有用
+  AdvancedClassDisplay AdvancedClassDisplay 类说明符强制类的所有属性只显示在 “详细信息” 面板的 “高级” 部分中, 默认情况下隐藏在 “视图” 中。若要在单个属性上重写此项, 请在该属性上使用 SimpleDisplay 说明符
+  AutoCollapseCategories=(Category1, Category2, …) / DontAutoCollapseCategories=(Category, Category, …) AutoCollapseCategories类说明符取消对父类AutoExpandCategories说明符的列出类别的影响
+DontAutoCollapseCategories否定从父类继承的列出类别的AutoCollapseCategories说明符
+  AutoExpandCategories=(Category1, Category2, …) 指定应在该类的对象的 “虚幻编辑器” 属性窗口中自动展开的一个或多个类别。若要自动声明为无类别的变量, 请使用声明变量的类的名称
+  Blueprintable / NotBlueprintable 将此类公开为创建蓝图的可接受基类。默认是NotBlueprintable，除非继承，否则该说明符由子类继承
+  BlueprintType 将此类公开为可用于蓝图中的变量的类型
+  ClassGroup=GroupName 表示在Actor浏览器中启用Group View后，虚幻编辑器的Actor浏览器应该在指定的GroupName中包含此类以及此类的任何子类</description>
+    </item>
+    
+    <item>
+      <title>UE4_蓝图与C&#43;&#43;相互通信</title>
+      <link>https://zhangjie147.github.io/posts/%E9%80%9A%E8%BF%87%E7%BB%A7%E6%89%BFublueprintfunctionlibrary%E7%9A%84%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%93%9D%E5%9B%BE%E4%B8%8Ec&#43;&#43;%E7%9B%B8%E4%BA%92%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Mon, 13 Sep 2021 17:06:42 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/%E9%80%9A%E8%BF%87%E7%BB%A7%E6%89%BFublueprintfunctionlibrary%E7%9A%84%E7%B1%BB%E5%AE%9E%E7%8E%B0%E8%93%9D%E5%9B%BE%E4%B8%8Ec&#43;&#43;%E7%9B%B8%E4%BA%92%E9%80%9A%E4%BF%A1/</guid>
+      <description>该方法实现的是蓝图调用c++类
+UMyBPFunctionLibrary中的方法为静态方法
+UMyBPFunctionLibrary.h
+UCLASS() class UMyBPFunctionLibrary : public UBlueprintFunctionLibrary { GENERATED_UCLASS_BODY() public: UFUNCTION(BlueprintCallable, Category = &amp;#34;MyFunction|MyClass&amp;#34;) static void Method1(); UFUNCTION(BlueprintCallable, Category = &amp;#34;MyFunction|MyClass&amp;#34;) static void Method2(); UFUNCTION(BlueprintCallable, Category = &amp;#34;MyFunction|MyClass&amp;#34;) static void Method3(); }; UMyBPFunctionLibrary.cpp
+UMyBPFunctionLibrary::UMyBPFunctionLibrary(const FObjectInitializer&amp;amp; ObjectInitializer) : Super(ObjectInitializer) { } void UMyBPFunctionLibrary::Method1() { } void UMyBPFunctionLibrary::Method2() { } void UMyBPFunctionLibrary::Method3() { } 这样蓝图中就可以调用c++中方法method1、method2、method3，方便蓝图与c++交互。</description>
+    </item>
+    
+    <item>
+      <title>UE4_C&#43;&#43;_事件委托（代理）</title>
+      <link>https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Fri, 10 Sep 2021 17:16:12 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/</guid>
+      <description>委托本身是一种特殊对象 委托可绑定任意对象的函数 委托是一种观察者模式，当委托执行时，通知所有绑定到这个委托的对象 定义委托类的宏可以在DelegateCombinations.h查看，这里只暂时只展示了无参数的宏。这些宏用于声明和定义一个委托类  #define DECLARE_DELEGATE( DelegateName ) FUNC_DECLARE_DELEGATE( DelegateName, void )  #define DECLARE_MULTICAST_DELEGATE( DelegateName ) FUNC_DECLARE_MULTICAST_DELEGATE( DelegateName, void )  #define DECLARE_EVENT( OwningType, EventName ) FUNC_DECLARE_EVENT( OwningType, EventName, void )  #define DECLARE_DYNAMIC_DELEGATE( DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_DELEGATE( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, , FUNC_CONCAT( *this ), void )  #define DECLARE_DYNAMIC_MULTICAST_DELEGATE( DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_MULTICAST_DELEGATE( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, , FUNC_CONCAT( *this ), void )  #define DECLARE_DELEGATE_RetVal( ReturnValueType, DelegateName ) FUNC_DECLARE_DELEGATE( DelegateName, ReturnValueType )  #define DECLARE_DYNAMIC_DELEGATE_RetVal( ReturnValueType, DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_DELEGATE_RETVAL( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, ReturnValueType, , FUNC_CONCAT( *this ), ReturnValueType ) 从上往下一次是：</description>
+    </item>
+    
+    <item>
+      <title>UE4_函数与事件的区别</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 10 Sep 2021 15:44:06 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4_%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>一、函数有返回值，事件无返回值
+二、函数调用会等待函数执行结果，事件调用只是触发但不会等待。
+三、函数执行在同一个线程，事件执行在不同线程。
+四、函数可以用局部变量，事件没有局部变量。
+五、因为函数执行顺序有保证，所以优先使用函数
+六、没有返回值的函数，在被子类Overide时，会变成事件</description>
+    </item>
+    
+    <item>
+      <title>CMD-编码</title>
+      <link>https://zhangjie147.github.io/posts/cmd-%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Mon, 07 Sep 2020 22:19:33 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/cmd-%E9%BB%98%E8%AE%A4%E7%BC%96%E7%A0%81/</guid>
+      <description>65001 UTF-8代码页 950 繁体中文 936 简体中文默认的GBK 437 MS-DOS 美国英语  临时修改 将当前控制台编码设置为UTF-8，则输入 CHCP 65001
+永久修改 在运行中通过regedit进入注册表找到
+HKEY_CURRENT_USER\Console%SystemRoot%_system32_cmd.exe
+新建一个 DWORD（32位值）,命名为CodePage，值设为65001
+已有CodePage的话，修改它，改为十进制，65001</description>
+    </item>
+    
+    <item>
+      <title>CocosCreator 触摸移动和缩放目标层的组件</title>
       <link>https://zhangjie147.github.io/posts/cocoscreator_scaleandslide/</link>
       <pubDate>Thu, 20 Jun 2019 22:00:00 +0800</pubDate>
       
       <guid>https://zhangjie147.github.io/posts/cocoscreator_scaleandslide/</guid>
-      <description>移动和缩放目标层 使用注意 需要新建一个相机来专门拍摄目标节点 ScaleAndSlide.js cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层 target: cc.Node, //移动缩放目标层 camera: cc.Camera, //渲染目标层的相机 }, onLoad: function () {</description>
+      <description>使用注意  需要新建一个相机来专门拍摄目标节点  ScaleAndSlide.js
+cc.Class({ extends: cc.Component, properties: { touchLayer: cc.Node, //触摸层  target: cc.Node, //移动缩放目标层  camera: cc.Camera, //渲染目标层的相机  }, onLoad: function () { let self = this; //设定最大缩放  this.maxZoomRatio = 1.2; //计算最小缩放  this.minZoomRatio = cc.view.getVisibleSize().width / this.target.width; if (cc.view.getVisibleSize().height / this.target.height &amp;gt; this.minZoomRatio) { this.minZoomRatio = cc.view.getVisibleSize().height / this.target.height; } if (this.minZoomRatio &amp;gt; this.maxZoomRatio) this.maxZoomRatio = 1; //默认最大视野  self.camera.zoomRatio = this.minZoomRatio; self.camera.targetX = self.</description>
     </item>
     
     <item>
-      <title>笔记-CocosCreator Layout即时更新布局</title>
+      <title>CocosCreator Layout即时更新布局</title>
       <link>https://zhangjie147.github.io/posts/laouut-update/</link>
       <pubDate>Thu, 13 Jun 2019 01:00:00 +0800</pubDate>
       
       <guid>https://zhangjie147.github.io/posts/laouut-update/</guid>
-      <description>Layout 即时更新布局 updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout() &amp;gt;&amp;hellip;(Layout) &amp;gt;&amp;gt;A(Layout) &amp;gt;&amp;gt;&amp;gt;B(Layout) B.updateLayout() A.updateLayout() ....updateLayout() 当在使用节点的 zIndex 属性给 Layout 的子节点排序时。 在</description>
+      <description>Layout 即时更新布局  updateLayout() 立即执行更新布局 的方法 如果存在多层 Layout 嵌套的情况 需要从最里层 layout 依次调用 updateLayout()  &amp;hellip;(Layout)
+ A(Layout)
+ B(Layout)
+     B.updateLayout() A.updateLayout() ....updateLayout()  当在使用节点的 zIndex 属性给 Layout 的子节点排序时。  在新加入一个子节点马上调用 updateLayout() ，会发现并没有达到效果。 这时我们需要先调用Node.sortAllChildren() (根据子节点的 zIndex 和 arrivalOrder 进行排序，正常情况下开发者不需要手动调用这个函数)
+&amp;gt;A(Layout) &amp;gt;&amp;gt;B(Node) # C.parent = A.node A.node.sortAllChildren() A.updateLayout() </description>
     </item>
     
     <item>
@@ -63,27 +174,88 @@
       <pubDate>Wed, 12 Jun 2019 13:22:33 +0800</pubDate>
       
       <guid>https://zhangjie147.github.io/posts/install-hugo-go/</guid>
-      <description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程 # 查看powershell版本 必须使用powershell3.0以上</description>
+      <description>安装Scoop(Scoop Windows 的命令行安装程序管理工具) scoop安装教程
+# 查看powershell版本 必须使用powershell3.0以上 # 如果是3.0以下，需要升级才可以使用，如何升级？先安装好Microsoft .NET Framework 4.5，再安装Windows Management Framework 4.0 然后重启即可 $PSVersionTable.PSVersion # 第一步，打开powershell3.0+，输入以下代码，选择A【全是】 set-executionpolicy remotesigned -s cu # 上面成功之后，进入第二步 iex (new-object net.webclient).downloadstring(&amp;#39;https://get.scoop.sh&amp;#39;) # 重启powerShell 安装Go  Go下载地址  安装Hugo scoop install hugo mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended </description>
     </item>
     
     <item>
-      <title>Email</title>
-      <link>https://zhangjie147.github.io/email-uri/</link>
-      <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+      <title>UE4_加载资源</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Fri, 03 Sep 2021 17:10:22 +0800</pubDate>
       
-      <guid>https://zhangjie147.github.io/email-uri/</guid>
-      <description> Email: 530784359@qq.com  </description>
+      <guid>https://zhangjie147.github.io/posts/ue4_%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90/</guid>
+      <description>资源的硬引用 只能在类的构造函数中使用
+#include &amp;#34;UObject/ConstructorHelpers.h&amp;#34; \\需要include的头文件FObjectFinder&amp;lt;T&amp;gt;() static ConstructorHelpers::FObjectFinder&amp;lt;\Class&amp;gt; ObjectFinder(TEXT(&amp;#34;path... &amp;#34;)); Class* name = ObjectFinder.Object; FClassFinder&amp;lt;T&amp;gt;() static ConstructorHelpers::FClassFinder&amp;lt;\Class&amp;gt; BPClassFinder(TEXT(&amp;#34;path... &amp;#34;)); TSubclassOf&amp;lt;Class&amp;gt; name = BPClassFinder.Class; ...//利用Class生成蓝图对象 资源的软引用 软性引用，即对象 A 通过间接机制（例如字符串形式的对象路径）来引用对象 B。
+硬引用的问题是在容易一开始就加载全部硬引用表示的资源，这可能导致资源载入时间过长。而软引用则是可随时灵活加载资源的一种引用，而不用硬性地一开始就加载。
+FSoftObjectPaths、FStringAssetReference FSoftObjectPath：是一个简单的结构体，其中包含了资源的完整名称（一个字符串）。它实质就是用一个字符串来表示对应的资源，从而可以随时通过字符串找到硬盘上的目标资源，将其载入进内存。
+FStringAssetReference：其实只是一个听起来更容易理解的别名，它实际在UE4源码里是这样的：
+typedef FSoftObjectPath FStringAssetReference; TSoftObjectPtr&amp;lt;T&amp;gt; TSoftObjectPtr是包含了FSoftObjectPath的TWeakObjectPtr，可通过模板参数来设置特定资源类型，这样就可以限制编辑器UI仅允许选择特定的资源种类。
+同步加载资源 LoadObject&amp;lt;T&amp;gt;() 加载UObject，一般用来加载非蓝图资源。
+Class* name = LoadObject&amp;lt;\Class&amp;gt;(nullptr,TEXT(&amp;#34;path..&amp;#34;)); LoadClass&amp;lt;T&amp;gt;() 加载UClass，一般用来加载蓝图资源并获取蓝图Class。实际上源码里LoadClass的实现是调用LoadObject并获取类型。 LoadClass的模版名称，和上面FClassFinder一样，不能直接写UBlueprint。 LoadClass路径规范也和上面的FClassFinder一样，带_C后缀或去掉前缀
+TSubclassOf&amp;lt;\Class&amp;gt; name = LoadClass&amp;lt;\Class&amp;gt;(nullptr, TEXT(&amp;#34;path.._C&amp;#34;)); TryLoad/LoadSynchronous TryLoad()//FSoftObjectPaths的方法，直接根据路径加载资源。  LoadSynchronous()//TSoftObjectPtr&amp;lt;\T&amp;gt;的方法，也是直接根据路径加载资源。 由于软引用里包含资源完整路径名，因此无需再写一次路径名，而是调用如上成员方法来加载资源进内存。而软引用的作用不仅如此，它还可以用于下面要介绍的资源异步加载方式。
+异步加载资源 即使可以控制加载资源的时机，但如果加载的资源对象很大（或者同一时刻加载多个资源），还是会造成卡顿，为了避免阻塞主线程，异步加载的方式必不可少。
+FStreamableManager.RequestAsyncLoad() 首先，需要创建FStreamableManager，官方建议将它放在某类全局游戏单例对象中，例如使用GameSingletonClassName在DefaultEngine.ini中指定的对象。
+FStreamableManager.RequestAsyncLoad()：将异步加载一组资源并在完成后调用委托 void UGameCheatManager::GrantItems() { //获取 FStreamableManager的单例对象引用  FStreamableManager&amp;amp; Streamable = .</description>
     </item>
     
     <item>
-      <title>About Hugo</title>
-      <link>https://zhangjie147.github.io/about-hugo/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      <title>UE4_资源加载的几种方式</title>
+      <link>https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Sat, 28 Aug 2021 17:10:22 +0800</pubDate>
       
-      <guid>https://zhangjie147.github.io/about-hugo/</guid>
-      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
- https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+      <guid>https://zhangjie147.github.io/posts/ue4_%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <description>资源加载的几种方式 1构造时引用 此种方式是在类的构造方法中使用，使用ConstructHelpers::FObjectFinder()方法可以实现在引用指定的资源文件，贴图，特效，材质等等都可以使用。有一点需要注意的就是这种方式一定只能在构造方法中使用，如果试图自己创建一个方法并且在这个方法中使用ConstructHelpers::FObjectFinder的方式去引用资源，游戏则会崩溃 UStaticMeshComponent* mesh; mesh = CreateDefaultSubobject(TEXT(&amp;#34;Mesh&amp;#34;)); // &amp;#34;/Game/Maze/Map/Mash/2wall_2&amp;#34; 可在UE4中右键资源复制引用  ConstructorHelpers::FObjectFinder&amp;lt;UStaticMesh&amp;gt; meshAsset(TEXT(&amp;#34;mesh asset path&amp;#34;)) mesh -&amp;gt;SetStaticMesh(meshAsset.Object); 2运行时引用 可以实现在运行中引用指定路径的资源。此时它就不是使用ConstructHelpers这个类去实现了，需要用到StaticLoadObject，以下是示例代码 UStaticMesh* AMyActor::GetStaticMeshByName(const FString&amp;amp; AssetName){ //&amp;#34;StaticMesh&amp;#39;/Engine/BasicShapes/Cube.Cube&amp;#39;&amp;#34;  FString Paths = &amp;#34;StaticMesh&amp;#39;/Game/TestFolder/Product1/Geometries/&amp;#34;; Paths.Append(AssetName).Append(&amp;#34;.&amp;#34;).Append(AssetName).Append(&amp;#34;&amp;#39;&amp;#34;); UStaticMesh* ReturnMesh = Cast&amp;lt;UStaticMesh&amp;gt;(StaticLoadObject(UStaticMesh::StaticClass(), NULL, *Paths)); return ReturnMesh; } 3直接属性引用 通过在头文件中定义变量指针，并将其设置为UPROPERTY(EditDefaultsOnly),之后在蓝图中将此变量赋予资源，最后就可以直接引用该变量设置资源了。不过这种方式似乎是不能动态控制，就是说点击Play按钮就全部会默认都加载 /** construction start sound stinger */ UPROPERTY(EditDefaultsOnly, Category=Mesh) UStaticMesh* MeshData; 4间接属性引用 间接属性引用跟第3种方法有点像同样用到了UPROPERTY(EditDefaulsOnly)，但是不同的是它声明变量是需要使用TSoftObjectPtr。例如TSoftObjectPtr&amp;lt;UStaticMesh&amp;gt; MeshData。这个形式表示该变量以字符串形式与模板代码存储在一起一边安全地检查资源是否已经加载，而不是可以在蓝图中设置完资源后就直接使用了。这种方式是可以控制什么时候加载该资源，并且加载需要手动写代码加载，加载之前将对该资源进行检查看是否加载。如果没有加载，会使用FStreamingManager 执行同步加载，如果已经加载，则会直接返回TSoftObjectPtr中的UStaticMesh指针 void ASoftActor::DynamicUpdateStaticMesh() { FStreamableManager&amp;amp; StreamableManager = UAssetManager::Get().GetStreamableManager(); if (MeshData.IsPending()) { const FSoftObjectPath&amp;amp; AssetRef = MeshData.</description>
+    </item>
+    
+    <item>
+      <title>UE4-多人联机 各类运行位子</title>
+      <link>https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</link>
+      <pubDate>Tue, 19 Nov 2019 14:25:12 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E8%A1%8C/</guid>
+      <description>只在服务器上运行  GameMode AI PlayerController  </description>
+    </item>
+    
+    <item>
+      <title>UE4-多人联机-Replicate</title>
+      <link>https://zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</link>
+      <pubDate>Mon, 04 Nov 2019 17:25:12 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/ue4-%E5%A4%9A%E4%BA%BA%E8%81%94%E6%9C%BA-replicate/</guid>
+      <description>UE4 C++ Replicate 方法 Replicate Property 在多人网络环境下，Actor也是网络传输的核心元素，甚至可以说Actor是网络同步中的最小单位
+ 我们需要将Actor::bReplicates变量设置为true。 只想让Actor的所有者得到信息，我们可以设置Actor::bAlwaysRelevant变量为true。 只想让距离Actor的一定范围的人得到同步，我们可以设置Actor::NetCullDistanceSquared。 特定条件，我们可以Override在Actor::IsNetRelevantFor函数。  方法一 将变量声明 Replicated
+UPROPERTY(Replicated) float a; 方法二 将变量声明 Replicated
+UPROPERTY(ReplicatedUsing=OnRep_A) float a; UFUNCTION() void OnRep_A(...); void OnRep_A(...) { ... } C++声明此种同步属性，当属性在服务器发生变化时，对应的客户端自动调用OnRep函数，在服务器端，需要手动调用OnRep函数
+以上都需要加入方法GetLifetimeReplicatedProps #include &amp;lt;Net/UnrealNetwork.h&amp;gt; void A::GetLifetimeReplicatedProps(TArray&amp;lt; FLifetimeProperty &amp;gt; &amp;amp; OutLifetimeProps) const { Super::GetLifetimeReplicatedProps(OutLifetimeProps); DOREPLIFETIME(A, a); } 可以用来使用条件复制（Conditional Replication）就可以实现属性只同步给部分客户端的功能
+ Function Call Replicate 一共有三种RPCs，分别为Server函数，Client函数，Multicast函数
+ Client 服务器上调用、但需要在客户端上执行的 RPC Server 客户端上调用、但需要在服务器上执行的 RPC Multicast 多播 RPC 可以从服务器调用，然后在服务器和当前连接的所有客户端上执行  UFUNCTION( Client ); Fa() UFUNCTION( Serve ); Fb() UFUNCTION( Multicast ); Fc() 定义我们的RPC函数。此时需要注意的是，RPC函数的定义需要在函数末尾添加_Impementation UFUNCTION( Serve ); Fa() void A::Fa_Implementation() { Fa(); } void A::Fa() { if (Role &amp;lt; ROLE_Authority) { ServerFa(); } } 枚举类型 UENUM() enum ENetRole { /** No role at all.</description>
+    </item>
+    
+    <item>
+      <title>Blüdhaven</title>
+      <link>https://zhangjie147.github.io/projects/bludhaven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangjie147.github.io/projects/bludhaven/</guid>
+      <description>History Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.</description>
+    </item>
+    
+    <item>
+      <title>Hydra</title>
+      <link>https://zhangjie147.github.io/projects/hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangjie147.github.io/projects/hydra/</guid>
+      <description>Motto Cut off one head and two will take their place</description>
+    </item>
+    
+    <item>
+      <title>Tatooine</title>
+      <link>https://zhangjie147.github.io/projects/tatooine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangjie147.github.io/projects/tatooine/</guid>
+      <description>A long time ago in a galaxy far, far away A project was planned, but never completed</description>
     </item>
     
   </channel>

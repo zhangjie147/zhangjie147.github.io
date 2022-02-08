@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQ on 张杰的博客</title>
+    <link>https://zhangjie147.github.io/tags/mysq/</link>
+    <description>Recent content in MySQ on 张杰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Feb 2022 20:01:49 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/tags/mysq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#_连接MySQL数据库</title>
+      <link>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Tue, 08 Feb 2022 20:01:49 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/csharp_%E8%BF%9E%E6%8E%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>先添加MySQL的DLL引用 在MySQL的安转目录下有 MySql.Data.dll 一般有多个版本 自己选择 在vs 项目-&amp;gt;添加项目引用-&amp;gt;浏览 添加MySql.Data.dll的引用 再在代码中调用 引用 using MySql.Data.MySqlClient; 建立连接 // 服务器地址；端口号；数据库；用户名；密码  public static string connectStr = &amp;#34;server=localhost;port=3306;database=****;user=root;password=****&amp;#34;; MySqlConnection con = new MySqlConnection(connectStr); 连接 if (this.con.State == System.Data.ConnectionState.Closed) { try { //连接数据库  this.con.Open(); Console.WriteLine(&amp;#34;连接成功&amp;#34;); } catch (Exception e) { Console.WriteLine(e.ToString()); } //finally  //{  // // 关闭连接  // con.Close();  // Console.WriteLine(&amp;#34;数据库已关闭&amp;#34;);  //}  } SQL语句查询 使用 MySqlCommand（数据不会存储，需要定义一个数组手动存储） 使用适配器 MySqlDataAdapter（将数据存储到内存中，占用内存） 使用事务 BeginTransaction（此方法用来批量执行一组命令，一个命令错误就会全部回滚，防止误提交问题） MySqlDataAdapter try { DataSet ds = new DataSet(); MySqlDataAdapter daa = new MySqlDataAdapter(&amp;#34;SQL语句&amp;#34;, con); daa.</description>
+    </item>
+    
+  </channel>
+</rss>

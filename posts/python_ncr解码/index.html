@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Python_NCR解码</title>
+    <meta name="description" content="NCR解码&amp;#xFFFF">
+    <meta name="keywords" content='blog, gokarna, hugo, Python, NCR'>
+
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Python_NCR解码">
+    <meta property="og:description" content="NCR解码&amp;#xFFFF">
+    <meta property="og:image" content="/images/aaa.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Python_NCR解码">
+    <meta name="twitter:description" content="NCR解码&amp;#xFFFF">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Python_NCR解码</h1>
+        <small role="doc-subtitle">NCR解码&amp;#xFFFF</small>
+        <p class="post-date">
+            02-08-2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/python">Python</a></li>
+        
+            <li class="post-tag"><a href="/tags/ncr">NCR</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h3 id="ncr编码有开头和x开头">NCR编码有&amp;#开头和&amp;#x开头</h3>
+<h4 id="先将开头十进制全部转换为x开头十六进制的">先将&amp;#开头十进制全部转换为&amp;#x开头十六进制的</h4>
+<h5 id="如16----x10">如&amp;#16 &mdash;》&amp;#x10</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">    <span style="color:#75715e"># 找到&amp;#开头</span>
+    re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#34;&amp;#(?P&lt;number&gt;\d+)&#34;</span>,NCR<span style="color:#f92672">.</span>_strChange10to16,line) 
+    <span style="color:#75715e"># 转换进制</span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_strChange10to16</span>(matched):
+        intStr <span style="color:#f92672">=</span> matched<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#34;number&#34;</span>)
+        intStr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&amp;#x&#39;</span> <span style="color:#f92672">+</span> hex(int(intStr,<span style="color:#ae81ff">10</span>))<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;0x&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>upper()
+        <span style="color:#66d9ef">return</span> intStr
+</code></pre></div><h4 id="将不是四位x开头十六进制编码补全为四位的">将不是四位&amp;#x开头十六进制编码补全为四位的</h4>
+<h5 id="如xffxfff----x00ffx0fff">如&amp;#xFF,&amp;#xFFF &mdash;》&amp;#x00FF,&amp;#x0FFF</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">    line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x([A-F0-9]</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">);&#39;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x00\1;&#39;</span>, line)    
+    line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x([A-F0-9]</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">);&#39;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x0\1;&#39;</span>, line) 
+</code></pre></div><h4 id="使用python的encodedecode函数转化">使用Python的encode(),decode()函数转化</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">    _t <span style="color:#f92672">=</span> _t<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)\ <span style="color:#75715e"># 去掉&#34;;&#34;</span>
+           <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;&amp;#x&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">u&#39;</span>)\ <span style="color:#75715e"># &#39;&amp;#x&#39; 替换为 &#39;\\u&#39;</span>
+           <span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)\ <span style="color:#75715e"># 转码</span>
+           <span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;unicode_escape&#39;</span>)
+</code></pre></div><h3 id="完整代码">完整代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e">#!/usr/bin/python</span>
+<span style="color:#f92672">import</span> re<span style="color:#f92672">,</span>os
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NCR</span>():
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_strChange10to16</span>(matched):
+        intStr <span style="color:#f92672">=</span> matched<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#34;number&#34;</span>)
+        intStr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&amp;#x&#39;</span> <span style="color:#f92672">+</span> hex(int(intStr,<span style="color:#ae81ff">10</span>))<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;0x&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>upper()
+        <span style="color:#66d9ef">return</span> intStr
+
+    <span style="color:#75715e"># 整段转换编码 我不会区分NCR编码外的其他能容 用下面的</span>
+    <span style="color:#75715e"># def dec(_t):</span>
+    <span style="color:#75715e">#     _t1 = re.sub(&#34;&amp;#(?P&lt;number&gt;\d+)&#34;,NCR._strChange10to16,_t)</span>
+    <span style="color:#75715e">#     _t1 = re.sub(r&#39;&amp;#x([A-F0-9]{2});&#39;, r&#39;&amp;#x00\1;&#39;, _t1)</span>
+    <span style="color:#75715e">#     _tt = _t1.replace(&#39;;&#39;,&#39;&#39;)\</span>
+    <span style="color:#75715e">#             .replace(&#39;&amp;#x&#39;,&#39;\\u&#39;)\</span>
+    <span style="color:#75715e">#             .encode(&#39;utf-8&#39;)\</span>
+    <span style="color:#75715e">#             .decode(&#39;unicode_escape&#39;)</span>
+    <span style="color:#75715e">#     #print(_tt)</span>
+    <span style="color:#75715e">#     return _tt</span>
+
+    <span style="color:#75715e"># 单个字转换编码        </span>
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dec_one</span>(matched):
+        intStr <span style="color:#f92672">=</span> matched<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#34;number&#34;</span>)
+        intStr <span style="color:#f92672">=</span> intStr<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;;&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)\
+                       <span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;&amp;#x&#39;</span>,<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">u&#39;</span>)\
+                       <span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)\
+                       <span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;unicode_escape&#39;</span>)
+        <span style="color:#75715e">#print(intStr)</span>
+        <span style="color:#66d9ef">return</span> intStr
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">updateFile</span>(file):
+        
+        <span style="color:#66d9ef">with</span> open(file, <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> f1,open(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">.bak&#34;</span> <span style="color:#f92672">%</span> file, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> f2:
+            <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f1:
+                <span style="color:#75715e"># 将 &amp;# 开头十进制转换为 &amp;#x 开头十六进制</span>
+                line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">&#34;&amp;#(?P&lt;number&gt;\d+)&#34;</span>,NCR<span style="color:#f92672">.</span>_strChange10to16,line) 
+                <span style="color:#75715e"># 补全 &amp;#x FF 到 &amp;#x 00FF 四位十六进制 </span>
+                line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x([A-F0-9]</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">);&#39;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x00\1;&#39;</span>, line)    
+                <span style="color:#75715e"># 补全 &amp;#x FFF 到 &amp;#x 0FFF 四位十六进制  我是新手就会这样写了      </span>
+                line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x([A-F0-9]</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">);&#39;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;&amp;#x0\1;&#39;</span>, line)  
+                <span style="color:#75715e"># 查找所有 &amp;#x 开头 NCR 编码 转换为 文字 utf-8      </span>
+                line <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;(?P&lt;number&gt;&amp;#x([A-Fa-f0-9]</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">);)&#39;</span>, NCR<span style="color:#f92672">.</span>dec_one, line) 
+                f2<span style="color:#f92672">.</span>write(line)
+        os<span style="color:#f92672">.</span>remove(file)
+        os<span style="color:#f92672">.</span>rename(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">.bak&#34;</span> <span style="color:#f92672">%</span> file, file)
+    
+NCR<span style="color:#f92672">.</span>updateFile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;文件路径&#34;</span>)
+</code></pre></div>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

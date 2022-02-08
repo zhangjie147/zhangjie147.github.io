@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 张杰的博客</title>
+    <link>https://zhangjie147.github.io/tags/python/</link>
+    <description>Recent content in Python on 张杰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Feb 2022 19:08:14 +0800</lastBuildDate><atom:link href="https://zhangjie147.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python_NCR解码</title>
+      <link>https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/</link>
+      <pubDate>Tue, 08 Feb 2022 19:08:14 +0800</pubDate>
+      
+      <guid>https://zhangjie147.github.io/posts/python_ncr%E8%A7%A3%E7%A0%81/</guid>
+      <description>NCR编码有&amp;amp;#开头和&amp;amp;#x开头 先将&amp;amp;#开头十进制全部转换为&amp;amp;#x开头十六进制的 如&amp;amp;#16 &amp;mdash;》&amp;amp;#x10 # 找到&amp;amp;#开头 re.sub(&amp;#34;&amp;amp;#(?P&amp;lt;number&amp;gt;\d+)&amp;#34;,NCR._strChange10to16,line) # 转换进制 def _strChange10to16(matched): intStr = matched.group(&amp;#34;number&amp;#34;) intStr = &amp;#39;&amp;amp;#x&amp;#39; + hex(int(intStr,10)).replace(r&amp;#39;0x&amp;#39;,&amp;#39;&amp;#39;).upper() return intStr 将不是四位&amp;amp;#x开头十六进制编码补全为四位的 如&amp;amp;#xFF,&amp;amp;#xFFF &amp;mdash;》&amp;amp;#x00FF,&amp;amp;#x0FFF line = re.sub(r&amp;#39;&amp;amp;#x([A-F0-9]{2});&amp;#39;, r&amp;#39;&amp;amp;#x00\1;&amp;#39;, line) line = re.sub(r&amp;#39;&amp;amp;#x([A-F0-9]{3});&amp;#39;, r&amp;#39;&amp;amp;#x0\1;&amp;#39;, line) 使用Python的encode(),decode()函数转化 _t = _t.replace(&amp;#39;;&amp;#39;,&amp;#39;&amp;#39;)\ # 去掉&amp;#34;;&amp;#34; .replace(&amp;#39;&amp;amp;#x&amp;#39;,&amp;#39;\\u&amp;#39;)\ # &amp;#39;&amp;amp;#x&amp;#39; 替换为 &amp;#39;\\u&amp;#39; .encode(&amp;#39;utf-8&amp;#39;)\ # 转码 .decode(&amp;#39;unicode_escape&amp;#39;) 完整代码 #!/usr/bin/python import re,os class NCR(): def _strChange10to16(matched): intStr = matched.group(&amp;#34;number&amp;#34;) intStr = &amp;#39;&amp;amp;#x&amp;#39; + hex(int(intStr,10)).replace(r&amp;#39;0x&amp;#39;,&amp;#39;&amp;#39;).upper() return intStr # 整段转换编码 我不会区分NCR编码外的其他能容 用下面的 # def dec(_t): # _t1 = re.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>UE4_C&#43;&#43;_事件委托（代理）</title>
+    <meta name="description" content="C&#43;&#43;_事件委托（代理）">
+    <meta name="keywords" content='blog, gokarna, hugo, UE4'>
+
+    <meta property="og:url" content="https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UE4_C&#43;&#43;_事件委托（代理）">
+    <meta property="og:description" content="C&#43;&#43;_事件委托（代理）">
+    <meta property="og:image" content="/images/aaa.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UE4_C&#43;&#43;_事件委托（代理）">
+    <meta name="twitter:description" content="C&#43;&#43;_事件委托（代理）">
+    <meta property="twitter:domain" content="https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/">
+    <meta property="twitter:url" content="https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/">
+    <meta name="twitter:image" content="/images/aaa.jpg">
+
+    
+    <link rel="canonical" href="https://zhangjie147.github.io/posts/ue4_c&#43;&#43;_%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E4%BB%A3%E7%90%86/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.css" integrity="sha384-6LkG2wmY8FK9E0vU9OOr8UvLwsaqUg9SETfpq4uTCN1agNe8HRdE9ABlk+fVx6gZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/katex.min.js" integrity="sha384-31El76TwmbHj4rF9DyLsygbq6xoIobG0W+jqXim+a3dU9W53tdH3A/ngRPxOzzaB" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.16/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://zhangjie147.github.io/">
+                <img src="/images/aaa.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://zhangjie147.github.io/">张杰的博客</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> 主页 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> 笔记 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> 标签 </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href=""><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> 主页 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> 笔记 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> 标签 </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href=""><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/zhangjie147/"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>UE4_C&#43;&#43;_事件委托（代理）</h1>
+        <small role="doc-subtitle">C&#43;&#43;_事件委托（代理）</small>
+        <p class="post-date">
+            09-10-2021
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/ue4">UE4</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <ul>
+<li>委托本身是一种特殊对象</li>
+<li>委托可绑定任意对象的函数</li>
+<li>委托是一种观察者模式，当委托执行时，通知所有绑定到这个委托的对象</li>
+<li>定义委托类的宏可以在DelegateCombinations.h查看，这里只暂时只展示了无参数的宏。这些宏用于声明和定义一个委托类</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">#define DECLARE_DELEGATE( DelegateName ) FUNC_DECLARE_DELEGATE( DelegateName, void )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_MULTICAST_DELEGATE( DelegateName ) FUNC_DECLARE_MULTICAST_DELEGATE( DelegateName, void )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_EVENT( OwningType, EventName ) FUNC_DECLARE_EVENT( OwningType, EventName, void )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_DYNAMIC_DELEGATE( DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_DELEGATE( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, , FUNC_CONCAT( *this ), void )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_DYNAMIC_MULTICAST_DELEGATE( DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_MULTICAST_DELEGATE( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, , FUNC_CONCAT( *this ), void )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_DELEGATE_RetVal( ReturnValueType, DelegateName ) FUNC_DECLARE_DELEGATE( DelegateName, ReturnValueType )
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">#define DECLARE_DYNAMIC_DELEGATE_RetVal( ReturnValueType, DelegateName ) BODY_MACRO_COMBINE(CURRENT_FILE_ID,_,__LINE__,_DELEGATE) FUNC_DECLARE_DYNAMIC_DELEGATE_RETVAL( FWeakObjectPtr, DelegateName, DelegateName##_DelegateWrapper, ReturnValueType, , FUNC_CONCAT( *this ), ReturnValueType )
+</span></code></pre></div><p>从上往下一次是：</p>
+<ul>
+<li>单播委托：只能绑定一个函数</li>
+<li>多播委托：可绑定多个函数</li>
+<li>事件：特殊的多播委托，只能在指定类中触发</li>
+<li>动态单播委托：只能绑定一个函数，可暴露给蓝图使用</li>
+<li>动态多播委托：能绑定多个函数，可暴露给蓝图使用</li>
+<li>单播委托_带返回值：以上只能绑定void函数，这个可绑定带返回值的函数，并可使用返回值</li>
+<li>动态单播委托_带返回值：同上，可暴露给蓝图使用</li>
+</ul>
+<h2 id="委托的使用">委托的使用</h2>
+<p>委托的使用可分为4个步骤：</p>
+<ul>
+<li>声明委托（委托签名）：使用宏声明和定义一个委托类，表明委托可接受的函数签名</li>
+<li>创建委托：在需要执行委托的类中声明一个委托成员变量</li>
+<li>执行委托：执行委托，会触发绑定的函数</li>
+<li>绑定委托：将委托执行时触发的对象成员函数绑定到这个委托上
+以上是按照开发时写代码的顺序，实际运行时是绑定在前、执行在后。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">   <span style="color:#75715e">// 1.声明和定义一个委托类
+</span><span style="color:#75715e"></span>   DECLARE_DELEGATE(FMyDelegate);
+   <span style="color:#66d9ef">class</span>  <span style="color:#a6e22e">MyObject</span>
+   {
+   <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">void</span> MyFunction();
+    <span style="color:#75715e">// 2.创建一个委托成员变量
+</span><span style="color:#75715e"></span>    FMyDelegate MyDeleage;
+   };
+   <span style="color:#66d9ef">void</span> MyObject<span style="color:#f92672">::</span>MyFunction()
+   {
+    <span style="color:#75715e">// 3.执行委托
+</span><span style="color:#75715e"></span>    MyDelegate.ExecuteIfBound();
+   }
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">// 4. 在其它的地方，需要将函数绑定到委托上
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span>  <span style="color:#a6e22e">FObserver</span>
+{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">void</span> Begin();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">Test</span>();
+
+    MyObject MyObject;
+};
+<span style="color:#66d9ef">void</span> FObserver<span style="color:#f92672">::</span>Begin()
+{
+    <span style="color:#75715e">// 4.找个地方绑定委托
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 当MyObject的MyDeleage执行的时候，就会触发Test函数
+</span><span style="color:#75715e"></span>    MyObject.MyDeleage.BindRaw(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FObserver<span style="color:#f92672">::</span>Test);
+}
+</code></pre></div><p>各种委托使用的快速参考</p>
+<ul>
+<li>通常单播委托执行使用ExecuteIfBound()，多播委托执行使用Broadcast()。</li>
+<li>通常什么类声明，什么类就负责执行委托。</li>
+<li>通常单播委托绑定使用Bind**()，多播委托绑定使用Add**()。</li>
+<li>适应性最广的是动态多播委托。如果只是给C++用则使用多播委托。
+用于绑定的函数应该与委托签名一致。</li>
+</ul>
+<h2 id="单播委托">单播委托</h2>
+<p>定义委托类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    DECLARE_DELEGATE(FMyDelegate);<span style="color:#75715e">//不带参数
+</span><span style="color:#75715e"></span>    DECLARE_DELEGATE_OneParam(FMyDelegate1, int32);<span style="color:#75715e">//带一个int32类型的参数
+</span><span style="color:#75715e"></span>    DECLARE_DELEGATE_TwoParams(FMyDelegate2, int32, <span style="color:#66d9ef">float</span>);<span style="color:#75715e">//带一个int32和float类型的参数
+</span></code></pre></div><p>创建委托变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">// 假设放在MyObject中
+</span><span style="color:#75715e"></span>    FMyDelegate MyDelegate;
+    FMyDelegate1 MyDelegate1;
+    FMyDelegate2 MyDelegate2;
+</code></pre></div><p>执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    MyDelegate.ExecuteIfBound();
+    MyDelegate1.ExecuteIfBound(<span style="color:#ae81ff">1</span>);
+    MyDelegate2.ExecuteIfBound(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.5f</span>);
+</code></pre></div><p>绑定和解绑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">//假设为了触发FMyObject2中的MyFunction函数。
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindRaw(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//this为非UObject对象，最好不用，使用BindSP代替
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindUObject(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//this为UObject对象
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindUFunction(<span style="color:#66d9ef">this</span>,FName(<span style="color:#e6db74">&#34;MyFunction&#34;</span>));<span style="color:#75715e">//最好不用，使用BindUObject代替
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindSP(MyObject2Ptr,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//MyObject2Ptr为共享指针
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindStatic(<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//MyFunction为static函数
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindLambda([](){});<span style="color:#75715e">//绑定一个Lambda函数
+</span><span style="color:#75715e"></span>    
+    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.UnBind();<span style="color:#75715e">//解除绑定
+</span></code></pre></div><h2 id="多播委托">多播委托</h2>
+<p>定义委托类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    DECLARE_MULTICAST_DELEGATE(FMyDelegate);<span style="color:#75715e">//不带参数
+</span><span style="color:#75715e"></span>    DECLARE_MULTICAST_DELEGATE_OneParam(FMyDelegate1, int32);<span style="color:#75715e">//带一个int32类型的参数
+</span><span style="color:#75715e"></span>    DECLARE_MULTICAST_DELEGATE_TwoParams(FMyDelegate2, int32, <span style="color:#66d9ef">float</span>);<span style="color:#75715e">//带一个int32和float类型的参数
+</span></code></pre></div><p>创建委托变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">// 假设放在MyObject中
+</span><span style="color:#75715e"></span>    FMyDelegate MyDelegate;
+    FMyDelegate1 MyDelegate1;
+    FMyDelegate2 MyDelegate2;
+</code></pre></div><p>执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    MyDelegate.Broadcast();
+    MyDelegate1.Broadcast(<span style="color:#ae81ff">1</span>);
+    MyDelegate2.Broadcast(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.5f</span>);
+</code></pre></div><p>绑定和解绑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">//假设为了触发FMyObject2中的MyFunction函数。
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddRaw(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//this为非UObject对象，最好不用，使用BindSP代替
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddUObject(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//this为UObject对象
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddUFunction(<span style="color:#66d9ef">this</span>,FName(<span style="color:#e6db74">&#34;MyFunction&#34;</span>));<span style="color:#75715e">//最好不用，使用BindUObject代替
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddSP(MyObject2Ptr,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//MyObject2Ptr为共享指针
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddStatic(<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//MyFunction为static函数
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddLambda([](){});<span style="color:#75715e">//绑定一个Lambda函数
+</span><span style="color:#75715e"></span>    
+    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.Remove(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//解除绑定
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.RemoveAll();<span style="color:#75715e">//解除绑定
+</span><span style="color:#75715e"></span>
+</code></pre></div><h2 id="动态单播委托">动态单播委托</h2>
+<p>“动态”意味着可以给蓝图使用，限制是但是只能绑定UFUNCTION宏标记的函数。</p>
+<p>定义委托类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    DECLARE_DYNAMIC_DELEGATE(FMyDelegate);<span style="color:#75715e">//不带参数
+</span><span style="color:#75715e"></span>    DECLARE_DYNAMIC_DELEGATE_OneParam(FMyDelegate1, int32);<span style="color:#75715e">//带一个int32类型的参数
+</span><span style="color:#75715e"></span>    DECLARE_DYNAMIC_DELEGATE_TwoParams(FMyDelegate2, int32, <span style="color:#66d9ef">float</span>);<span style="color:#75715e">//带一个int32和float类型的参数
+</span></code></pre></div><p>创建委托变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">// 假设放在MyObject中
+</span><span style="color:#75715e"></span>    FMyDelegate MyDelegate;
+    FMyDelegate1 MyDelegate1;
+    FMyDelegate2 MyDelegate2;
+
+</code></pre></div><p>执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    MyDelegate.ExecuteIfBound();
+    MyDelegate1.ExecuteIfBound(<span style="color:#ae81ff">1</span>);
+    MyDelegate2.ExecuteIfBound(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.5f</span>);
+</code></pre></div><p>绑定和解绑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">//假设为了触发FMyObject2中的MyFunction函数。
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.BindDynamic(<span style="color:#66d9ef">this</span>,<span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//this为UObject对象
+</span><span style="color:#75715e"></span>    
+    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.UnBind();<span style="color:#75715e">//解除绑定
+</span></code></pre></div><h2 id="动态多播委托">动态多播委托</h2>
+<p>定义委托类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FMyDelegate);<span style="color:#75715e">//不带参数
+</span><span style="color:#75715e"></span>    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMyDelegate1, int32);<span style="color:#75715e">//带一个int32类型的参数
+</span><span style="color:#75715e"></span>    DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FMyDelegate2, int32, <span style="color:#66d9ef">float</span>);<span style="color:#75715e">//带一个int32和float类型的参数
+</span></code></pre></div><p>创建委托变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">// 假设放在MyObject中
+</span><span style="color:#75715e"></span>    FMyDelegate MyDelegate;
+    FMyDelegate1 MyDelegate1;
+    FMyDelegate2 MyDelegate2;
+</code></pre></div><p>执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    MyDelegate.Broadcast();
+    MyDelegate1.Broadcast(<span style="color:#ae81ff">1</span>);
+    MyDelegate2.Broadcast(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0.5f</span>);
+</code></pre></div><p>绑定和解绑</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">    <span style="color:#75715e">//假设为了触发FMyObject2中的MyFunction函数。
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.AddDynamic(<span style="color:#66d9ef">this</span>, <span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//最好不用，使用BindUObject代替
+</span><span style="color:#75715e"></span>    
+    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.Remove(<span style="color:#66d9ef">this</span>, <span style="color:#f92672">&amp;</span>FMyObject2<span style="color:#f92672">::</span>MyFunction);<span style="color:#75715e">//解除绑定
+</span><span style="color:#75715e"></span>    MyObject<span style="color:#f92672">-&gt;</span>MyDelegate.RemoveAll();<span style="color:#75715e">//解除绑定
+</span></code></pre></div>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 张 杰</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
